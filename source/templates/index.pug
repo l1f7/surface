@@ -1,0 +1,24 @@
+include _mixins/_forms
+include _includes/_head
+
+body.l-sitewrap
+  <!--[if lt IE 9]><p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p><![endif]-->
+
+  .login-container
+    .login-page
+      .login-box.card
+        .content
+          .login-logo
+            img(src="/assets/images/mckillican-logo.gif")
+          .login-fields
+            +input-text('Email')
+            +input-text('Password')
+            +input-checkbox('Stay signed in', true)
+          .login-button.text-center
+            a.btn.btn-lg.btn-secondary.btn-fill(href="/homepage.html") Login
+          .login-forgot
+            p.ts-small Forgot your password? <a href="#">Click Here</a>
+
+  include _includes/_scripts
+
+</html>

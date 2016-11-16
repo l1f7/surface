@@ -1,0 +1,64 @@
+mixin input-text(label, value, help)
+  .form-group
+    if (label != null)
+      label(for="id_label")= label
+      if (value != null)
+        input.form-control(id="id_label", type="text", value=label)
+      else
+        input.form-control(id="id_label", type="text", placeholder=label)
+    else
+      input.form-control(id="id_label", type="text", value=value)
+    if (help)
+      .help-block!= help
+
+
+mixin input-password(label, value, help)
+  .form-group
+    if (label != null)
+      label(for="id_label")= label
+      if (value != null)
+        input.form-control(id="id_label", type="password", value=label)
+      else
+        input.form-control(id="id_label", type="password", placeholder=label)
+    else
+      input.form-control(id="id_label", type="password", value=value)
+    if (help)
+      .help-block!= help
+
+
+mixin input-email(label, value, help)
+  .form-group
+    if (label != null)
+      label(for="id_label")= label
+      if (value != null)
+        input.form-control(id="id_label", type="email", value=value)
+      else
+        input.form-control(id="id_label", type="email", placeholder=label)
+    else
+      input.form-control(id="id_label", type="email", value=value)
+    if (help)
+      .help-block!= help
+
+
+mixin input-qty(label, value)
+  input.form-control.js-qty(id="id_label", type="text", value=value)
+
+
+mixin input-checkbox(label, value, help)
+  .checkbox
+    label(for="id_label")
+      if (value == true)
+        input(id="id_label", type="checkbox", checked="checked")
+      else
+        input(id="id_label", type="checkbox")
+      | #{label}
+    if (help)
+      .help-block= help
+
+mixin input-select(options, selected)
+  select.form-control
+    each opt in options
+      if (opt == selected)
+        option(value=opt, selected="selected")= opt
+      else
+        option(value=opt)= opt

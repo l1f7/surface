@@ -1,0 +1,28 @@
+
+// Default Shades
+// ---------------------
+$white             : #fff;
+$white-off         : #f2f2f2;
+$grey-light        : #aaa;
+$grey              : #999;
+$grey-dark         : #777;
+$black-off         : #444;
+$black             : #272526;
+
+
+// Brand Colors
+// ---------------------
+$aqua              : #42bfb7;
+
+// Foundation Defaults
+// ---------------------
+$foundation-palette: (
+  primary: #2199e8,
+  secondary: #777,
+  success: #3adb76,
+  warning: #ffae00,
+  alert: #ec5840,
+);
+$body-background: $white;
+$body-font-color: $black-off;
+$base-border: $grey-light;

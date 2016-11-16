@@ -1,0 +1,31 @@
+
+.rich-text {
+  margin-bottom: 1rem;
+  padding: 0 1rem;
+
+  blockquote {
+    text-align: center;
+
+    p {
+      @extend .ts-alt;
+    }
+  }
+}
+
+.richtext-image {
+  margin-bottom: 1rem;
+
+  &.right {
+    float: right;
+    margin-left: 2rem;
+  }
+
+  &.left {
+    float: left;
+    margin-right: 2rem;
+  }
+}
+
+.richtext-block {
+  margin-bottom: 2rem;
+}

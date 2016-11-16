@@ -1,0 +1,82 @@
+.progressive {
+  display: block;
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  overflow: hidden;
+
+  img {
+    display: block;
+    margin: 0;
+    border-radius: 3px;
+  }
+
+  &.wrap-left,
+  &.wrap-right {
+    margin: 1em 30px;
+    width: 40%;
+  }
+
+  &.wrap-left { float: left; }
+
+  &.wrap-right { float: right; }
+
+  &.full {
+    margin: 2em 30px;
+    width: auto;
+    max-width: none;
+  }
+
+  &.is-loaded {
+    .progressive-thumbnail { transform: scale(1); }
+    .progressive-image { opacity: 1; }
+  }
+}
+
+.progressive-caption {
+  margin: 0;
+  border-bottom: 1px solid $base-border;
+  padding: rem(15) 0;
+  width: 100%;
+  max-width: none;
+  color: $body-font-color;
+  font-size: remcalc(12);
+  font-style: italic;
+}
+
+.progressive-ratio {
+  display: block;
+}
+
+.progressive-image,
+.progressive-thumbnail {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all .5s cubic-bezier(.455, .03, .515, .955);
+  width: 100%;
+}
+
+.progressive-thumbnail {
+  transform: scale(1.05);
+  -webkit-filter: blur(6px);
+  filter: blur(6px);
+}
+
+.progressive-image {
+  opacity: 0;
+}
+
+@include breakpoint(medium) {
+  .progressive {
+    &.full,
+    &.wrap-left,
+    &.wrap-right {
+      float: none;
+      margin: 1em auto;
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,44 @@
+//-----------------------------------------------------------
+// MIXINS
+//-----------------------------------------------------------
+// I'm STILL lazy and hate typing dashes
+@function remcalc($values) {
+  @return rem-calc($values);
+}
+
+@mixin cover($background: false) {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  @if $background {
+    background: $background;
+  }
+}
+
+// Hide text for image replacements
+// @ref: http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement/
+@mixin hide-text {
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+}
+
+// Vertically align anything
+// You have to make sure there is a height on it's containing element
+// or it will normally show up halfway out the top of it's container
+// @ref: http://zerosixthree.se/vertical-align-anything-with-just-3-lines-of-css/
+@mixin vertical-align {
+  @include transform(translateY(-50%));
+  position: relative;
+  top: 50%;
+}
+
+// Make text-blocks create long, non-breaking strings as
+// ellipsis overflow instead of breaking the layout
+@mixin ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
