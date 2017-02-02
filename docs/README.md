@@ -28,32 +28,33 @@ Programming languages and configuration:
 
 ## Installing
 ### macOS
-1. Install Command Line Tools
+1. Install Command Line Tools  
 `xcode-select --install`
 2. Install Homebrew
-`/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
+`/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`  
 `brew doctor`
-3. Install Homebrew packages
-`brew install git`
-`brew install imagemagick --with-webp`
-`brew install python`
-`brew install python3`
+3. Install Homebrew packages  
+`brew install git`  
+`brew install imagemagick --with-webp`  
+`brew install python`  
+`brew install python3`  
+`brew linkapps python`  
 `brew linkapps python3`
-4. Install Node Version Manager
-`curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash`
-5. Install PyPi
+4. Install Node Version Manager  
+`curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash`  
+5. Install PyPi  
 `pip install pip`
-6. Install Python packages
-`pip install cookiecutter`
-`pip install virtualenv`
+6. Install Python packages  
+`pip install cookiecutter`  
+`pip install virtualenv`  
 `pip install virtualenvwrapper`
 
 ### Arch Linux
-1. Install general development packages
+1. Install general development packages  
 `sudo pacman -S git python python`
-2. Install Node Version Manager
+2. Install Node Version Manager  
 `sudo pacman -S nvm`
-3. Install PyPi
+3. Install PyPi  
 `sudo pacman -S python-pip python-pip2`
 
 ### Windows
@@ -62,22 +63,22 @@ Programming languages and configuration:
 
 ## Configuring
 ### Node
-1. Install currently-used Node versions
-`nvm install 0.10`
+1. Install currently-used Node versions  
+`nvm install 0.10`  
 `nvm install 4`
-2. Set the default version
+2. Set the default version  
 `nvm alias default 4`
-3. Set Python version
+3. Set Python version  
 `npm config set python python2.7`
-4. Install global Node utilities
-`npm install -g avn`
-`npm install -g avn-nvm`
-`npm install -g avn-n`
-`npm install -g bower`
-`npm install -g eslint`
-`npm install -g gulp`
+4. Install global Node utilities  
+`npm install -g avn`  
+`npm install -g avn-nvm`  
+`npm install -g avn-n`  
+`npm install -g bower`  
+`npm install -g eslint`  
+`npm install -g gulp`  
 `npm install -g stylelint`
-5. Set up `avn`
+5. Set up `avn`  
 `avn setup`
 
 **Note:** Repeat steps 3–6 for all additional Node versions.
