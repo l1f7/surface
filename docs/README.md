@@ -30,7 +30,7 @@ Programming languages and configuration:
 ### macOS
 1. Install Command Line Tools  
 `xcode-select --install`
-2. Install Homebrew
+2. Install Homebrew  
 `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`  
 `brew doctor`
 3. Install Homebrew packages  
@@ -42,6 +42,7 @@ Programming languages and configuration:
 `brew linkapps python3`
 4. Install Node Version Manager  
 `curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash`  
+`command -v nvm`  
 5. Install PyPi  
 `pip install pip`
 6. Install Python packages  
@@ -81,7 +82,7 @@ Programming languages and configuration:
 5. Set up `avn`  
 `avn setup`
 
-**Note:** Repeat steps 3–6 for all additional Node versions.
+**Note:** Repeat steps 3–5 for all additional Node versions.
 
 [Homebrew]: http://brew.sh/
 
