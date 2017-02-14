@@ -8,8 +8,7 @@
   },
   "scripts": {
     "build": "gulp --prod",
-    "dev": "gulp --dev",
-    "postinstall": "bower install"
+    "dev": "gulp --dev"
   },
   "dependencies": {
     "jquery": "^2.2.3",
