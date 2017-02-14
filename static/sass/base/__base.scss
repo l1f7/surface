@@ -1,11 +1,12 @@
 //
 // Libraries
 //
-@import 'normalize-scss/_normalize';
-@import 'motion-ui/src/motion-ui';
+@import "normalize-scss/sass/normalize";
+@include normalize();
+// @import 'motion-ui/src/motion-ui';
 // @import 'bourbon/app/assets/stylesheets/bourbon';
-@import 'foundation-sites/scss/util/util';
-@import 'foundation-sites/scss/util/mixins';
+// @import 'foundation-sites/scss/util/util';
+// @import 'foundation-sites/scss/util/mixins';
 
 //
 // Project Setup (variables and useful code patterns)
@@ -22,6 +23,6 @@
 //
 // Foundation Core
 //
-@import 'foundation_settings';
-@import 'foundation-sites/scss/foundation';
-@import 'foundation_modules';
+// @import 'foundation_settings';
+// @import 'foundation-sites/scss/foundation';
+// @import 'foundation_modules';
