@@ -11,7 +11,7 @@
 var config = {}
 
 // source
-config.sourceDirectory    = './raw/';
+config.sourceDirectory    = './static/';
 config.sourceAssets       = config.sourceDirectory + 'assets/';
 
 // prototype directory
