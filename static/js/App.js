@@ -1,4 +1,4 @@
-require('expose?$!expose?jQuery!jquery');
+require('jquery'); // eslint-disable-line no-unresolved
 
 ((function App(window, $) {
   // Vendor/Bower Libraries
@@ -60,22 +60,22 @@ require('expose?$!expose?jQuery!jquery');
     // global elements should be contained in here
     // ie. global navigation
     common: {
-      init: function commonInit() {
+      init() {
         /*eslint-disable */
         console.log('%cMADE BY LIFT | liftinteractive.com',
           `background: white; color: #333; border: 1px solid #333;
            line-height: 30px; padding: 5px 10px;`);
         /*eslint-enable */
 
-        $(document).foundation();
         $(window).trigger('el.init');
+        // $(document).foundation();
       },
     },
   };
 
 
   const UTIL = {
-    exec: function utilExec(model, action) {
+    exec(model, action) {
       const modelAction = (action === undefined) ? 'init' : action;
 
       if (model !== '' && LIFT[model] && typeof LIFT[model][modelAction] === 'function') {
@@ -83,7 +83,7 @@ require('expose?$!expose?jQuery!jquery');
       }
     },
 
-    init: function utilInit() {
+    init() {
       // the following looks for an element with a class "body"
       // and then pulls the value of it's data-model and data-action
       // attributes (if they exist, which they should):
@@ -94,6 +94,7 @@ require('expose?$!expose?jQuery!jquery');
 
       UTIL.exec('common');      // calls LIFT.common.init()
       UTIL.exec(model);         // calls LIFT.model.init()
+
       if (action !== undefined) {
         UTIL.exec(model, action); // calls LIFT.model.action()
       }
