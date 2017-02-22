@@ -55,7 +55,7 @@ tags
 sources/
 
 ## SPHINX DOCS
-build
+#build
 
 ## LOGS & DATABASES
 *.log
@@ -65,4 +65,4 @@ build
 
 
 # DOCKER ==============================================================
-build/node/src
+build/frontend/src
