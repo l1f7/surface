@@ -82,7 +82,6 @@ require('jquery'); // eslint-disable-line no-unresolved
         LIFT[model][modelAction]();
       }
     },
-
     init() {
       // the following looks for an element with a class "body"
       // and then pulls the value of it's data-model and data-action
