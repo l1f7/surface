@@ -2,9 +2,7 @@
 // Libraries
 //
 @import "normalize-scss/sass/normalize";
-@include normalize();
-// @import 'motion-ui/src/motion-ui';
-// @import 'bourbon/app/assets/stylesheets/bourbon';
+@include normalize;
 // @import 'foundation-sites/scss/util/util';
 // @import 'foundation-sites/scss/util/mixins';
 
@@ -24,5 +22,4 @@
 // Foundation Core
 //
 // @import 'foundation_settings';
-// @import 'foundation-sites/scss/foundation';
 // @import 'foundation_modules';
