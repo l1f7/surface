@@ -1,4 +1,7 @@
-// libraries
+// Imports or Requires
+// Ex.
+// import * as THREE from 'three';
+// require('slick-carousel/slick/slick.js');
 // const Rellax = require('rellax/rellax');
 
 function init() {
