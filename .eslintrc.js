@@ -9,6 +9,9 @@ module.exports = {
     'Foundation': true
   },
   'rules': {
-    'max-len': ['error', 120]
+    'max-len': [
+      1,
+      120
+    ]
   }
 }
