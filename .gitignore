@@ -55,7 +55,7 @@ tags
 sources/
 
 ## SPHINX DOCS
-#build
+build
 
 ## LOGS & DATABASES
 *.log
