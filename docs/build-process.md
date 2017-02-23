@@ -1,28 +1,3 @@
-FRONTEND DEVELOPMENT ENVIRONMENT
-=============
-This is based off of the normal Lift Dev Environment document, so there shouldn't be any major surprises here.
-
-
-Install
-=========
-Native
-```
-npm install
-```
-
-Docker (requirements are installed when building the image)
-```
-make up_fe; make enter_fe
-```
-
-A note on Docker usage: when installing `npm` requirements you must save them to the `pacakge.json` with `--save` or `--save-dev` so after you stop your Docker container the requirements will get built into the Docker image.
-
-
-Directory Structure
-=========
-The `raw/` folder is where all frontend dev should happen. The working SCSS, JS, SVGs, images, and prototype templates are stored here.
-
-
 Build Processes
 =========
 
