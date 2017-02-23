@@ -8,10 +8,10 @@ gulp --dev
 ```
 
 This is our main Gulp task, it does the following, in this order:
-1. Optimize and minify images and SVGs into the `website/{{ cookiecutter.short_name }}/static/images` and `website/{{ cookiecutter.short_name }}/templates/includes/svgs` folders respectively
-1. Compile, lint, and minify Sass stylesheets into the `website/{{ cookiecutter.short_name }}/static/css` directory
-1. Lint the JavaScript, and then run it through Webpack to generate your JavaScript files into the `website/{{ cookiecutter.short_name }}/static/js` directory
-1. Runs a `browser-sync` instance accessed at `localhost:1337` which proxies the Django server through it and then will automatically refresh every time you make changes to images, SVGs, CSS, JavaScript, or templates
+  1. Optimize and minify images and SVGs into the `website/{{ cookiecutter.short_name }}/static/images` and `website/{{ cookiecutter.short_name }}/templates/includes/svgs` folders respectively
+  1. Compile, lint, and minify Sass stylesheets into the `website/{{ cookiecutter.short_name }}/static/css` directory
+  1. Lint the JavaScript, and then run it through Webpack to generate your JavaScript files into the `website/{{ cookiecutter.short_name }}/static/js` directory
+  1. Runs a `browser-sync` instance accessed at `localhost:1337` which proxies the Django server through it and then will automatically refresh every time you make changes to images, SVGs, CSS, JavaScript, or templates
 
 
 ## Prototyping
