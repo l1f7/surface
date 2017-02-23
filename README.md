@@ -6,6 +6,7 @@
 For project setup & workflow, refer to the docs below, otherwise, grab everything else and do work!
 
 
-| Documentation in [`docs/`](https://github.com/l1f7/surface/tree/master/docs) 📖|
-|---------------------|
-|[Dev Environment Guide](docs/README.md)|
+| Documentation in [`docs/`](https://github.com/l1f7/surface/tree/master/docs) 📖 |
+| --------------------- |
+| [Dev Environment Guide](docs/README.md) |
+| [Build Process Run-through](docs/build-process.md) |
