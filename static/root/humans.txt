@@ -1,0 +1,49 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+Lift Interactive: Strategy, design, branding, and development services — Edmonton, Canada
+Visit us @ http://liftinteractive.com/
+
+# FRONT-END TEAM
+
+    Adrian
+    Bryan
+    Jeff
+    Kalob
+
+
+# BACK-END TEAM
+
+    Ashia
+    Cody
+    Scott
+    Stephen
+    Tim
+
+
+# DESIGNERS
+
+    Chris
+    Derrick
+    Joel
+    Jordan
+    Lindsay
+    Seth
+
+
+# ACCOUNT MANAGERS
+
+    Claire
+    Jennifer
+    Jordan
+    Laura
+    Micah
+    Sarah
+    Thorren
+
+
+# THANKS
+
+# TECHNOLOGY COLOPHON
+
+    Django, etc.
