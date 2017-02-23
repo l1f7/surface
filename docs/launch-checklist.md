@@ -4,18 +4,8 @@
 
 > **This checklist is where we want to be**, not necessarily where we always are. Ideally we would want as many of those line items to already be taken care of by our starter kit and other boilerplates. In practice, it is not that simple and we need such a checklist to make sure that we deliver top-notch experiences.
 
-```
-      __...--~~~~~-._   _.-~~~~~--...__
-    //   Vorsprung   `V'    Pauca      \\
-   //   durch Technik |     sed bona    \\
-  //__...--~~~~~~-._  |  _.-~~~~~~--...__\\
- //__.....----~~~~._\ | /_.~~~~----.....__\\
-====================\\|//====================
-                    `---`
-```
 
 ## How to use this
-
 > This is meant to be used when a site goes live, but do go through it sooner to make sure there won't be too many surprises.
 
 1. It will take you **around 2 hours** to go through this list if you've done it before. Make sure you have the time. Ask for support.
@@ -28,12 +18,13 @@
     - If you added new checklist items, consider adding them back in the main checklists.
 4. Once you are done, ping another front-end dev to let them know this is done so they can help with what is left.
 
-## Checklists
 
+## Checklists
 |:heavy_check_mark:|Raw file|
 |------------------|--------|
 |[Front-end launch checklist](frontend-checklist.md)|[frontend-checklist.md](https://raw.githubusercontent.com/l1f7/surface/master/docs/frontend-checklist.md)|
 |[Project best practices](#project-best-practices)|[launch-checklist.md](https://raw.githubusercontent.com/l1f7/surface/master/docs/launch-checklist.md)|
+
 
 ## Project best practices
 ### Images
@@ -68,7 +59,6 @@
 
 
 ## Documentation
-
 ### The README contains
 - [x] TODO ~~Continuous integration service badge for the project (CodeShip)~~
 - [ ] All of the important links as a table
