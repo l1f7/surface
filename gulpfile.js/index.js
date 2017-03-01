@@ -15,52 +15,71 @@
   reload Gulp on changes, and will also persist Gulp through an error.
 */
 
+const gulp = require('gulp');
+
 // Make sure we have access to the ES2015 Promise format
 // which some of the Node libraries have started using
 // but which not all versions of Node support yet
 require('es6-promise').polyfill();
 
-var requireDir = require('require-dir')
-,   fs         = require('fs')
-,   gaze       = require('gaze')
-,   gutil      = require('gulp-util')
-,   respawn    = require('respawn');
+require('./tasks/watch');
+require('./tasks/css');
+require('./tasks/icons');
+require('./tasks/images');
+require('./tasks/js');
 
-// Require all tasks in gulp/tasks, including subfolders
-requireDir('./tasks', { recurse: true });
 
-// Keep gulp arguments
-process.argv.splice(0, 2);
+gulp.task('build', [
+  'css',
+  'icons',
+  'images',
+  'js',
+]);
 
-// Set our process options object
-var options = {
-  kill: 5000,
-  stdio: 'inherit'
-}
+gulp.task('default', ['build']);
 
-// Create process monitor that respawns Gulp on an error
-monitor = respawn(['gulp'].concat(process.argv), options);
-monitor.maxRestarts = 0;
 
-// Let the user know what's up
-gutil.log('Watching Gulp config files...');
+// var requireDir = require('require-dir')
+// ,   fs         = require('fs')
+// ,   gaze       = require('gaze')
+// ,   gutil      = require('gulp-util')
+// ,   respawn    = require('respawn');
 
-// Watch the gulpfile/task files for changes
-gaze(['./gulpfile.js/**/*.js'], function (err, watcher) {
-  // 'all' allows us to capture changed/added/deleted
-  // at the same time
-  this.on('all', function (filepath) {
-    gutil.log('Gulp config/tasks changed, reloading...');
-    monitor.stop(function () {
-      monitor.start();
-    });
+// // Require all tasks in gulp/tasks, including subfolders
+// requireDir('./tasks', { recurse: true });
 
-    process.on('SIGINT', function () {
-      monitor.stop(function () {
-        process.exit();
-      });
-    });
+// // Keep gulp arguments
+// process.argv.splice(0, 2);
 
-    monitor.start();
-  });
-});
+// // Set our process options object
+// var options = {
+//   kill: 5000,
+//   stdio: 'inherit'
+// }
+
+// // Create process monitor that respawns Gulp on an error
+// monitor = respawn(['gulp'].concat(process.argv), options);
+// monitor.maxRestarts = 0;
+
+// // Let the user know what's up
+// gutil.log('Watching Gulp config files...');
+
+// // Watch the gulpfile/task files for changes
+// gaze(['./gulpfile.js/**/*.js'], function (err, watcher) {
+//   // 'all' allows us to capture changed/added/deleted
+//   // at the same time
+//   this.on('all', function (filepath) {
+//     gutil.log('Gulp config/tasks changed, reloading...');
+//     monitor.stop(function () {
+//       monitor.start();
+//     });
+
+//     process.on('SIGINT', function () {
+//       monitor.stop(function () {
+//         process.exit();
+//       });
+//     });
+
+//     monitor.start();
+//   });
+// });
