@@ -28,7 +28,7 @@ module.exports = function (env) {
       rules: [
         {
           test: /\.js$/,
-          exclude: /(node_modules|bower_components|frontend\/bower)/,
+          exclude: /(node_modules|bower_components)/,
           loader: 'babel-loader',
           options: {
             cacheDirectory: true,
@@ -41,7 +41,7 @@ module.exports = function (env) {
       ],
     },
     resolve: {
-      modules: ['node_modules', 'frontend/bower', 'frontend/js'],
+      modules: ['node_modules', 'frontend/js'],
       alias: {
         // Prefer unminified CommonJS/AMD files over bundled dist versions.
         'jquery': 'jquery/src/jquery',
