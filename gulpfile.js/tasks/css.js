@@ -10,6 +10,7 @@
  *     6. Update build dir
  *     7. Stream new CSS to BrowserSync
  */
+/* eslint-disable import/no-extraneous-dependencies */
 
 const config = require('../config');
 const gulp = require('gulp');

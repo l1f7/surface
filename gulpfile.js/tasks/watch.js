@@ -1,8 +1,12 @@
+/**
+ * Initialise BrowserSync and watch files for changes.
+ */
+/* eslint-disable import/no-extraneous-dependencies */
+
 const config = require('../config');
 const gulp = require('gulp');
 const path = require('path');
 
-// const $ = require('gulp-load-plugins')();
 const bs = require('browser-sync').create('main');
 
 
