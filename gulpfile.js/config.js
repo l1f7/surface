@@ -54,6 +54,11 @@ module.exports = {
       port: '1337',
     },
 
+    imagemin: {
+      progressive: true,
+      interlaced: true,
+    },
+
     sass: {
       indentedSyntax: false,
       sourceComments: false,
