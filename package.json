@@ -11,8 +11,9 @@
     "dev": "gulp --dev"
   },
   "dependencies": {
-    "jquery": "2.2.4",
-    "normalize-scss": "6.0.0"
+    "jquery": "^2.2.3",
+    "normalize-scss": "^6.0.0",
+    "throttle-debounce": "^1.0.1"
   },
   "devDependencies": {
     "babel-core": "^6.23.1",
