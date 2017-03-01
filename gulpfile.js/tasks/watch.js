@@ -1,27 +1,22 @@
-var gulp    = require('gulp')
-,   config  = require('../config/index.js')
-,   images  = require('../config/images')
-,   svgs    = require('../config/svgs')
-,   sass    = require('../config/sass')
-,   pug     = require('../config/pug')
-,   argv    = require('yargs').argv
-,   webpack = require('../config/webpack.base')(process.env.NODE_ENV)
-,   watch   = require('gulp-watch');
+const config = require('../config');
+const gulp = require('gulp');
+const path = require('path');
 
-//gulp.task('watch', ['browserSync'], function() {
-gulp.task('watch', function() {
+// const $ = require('gulp-load-plugins')();
+const bs = require('browser-sync').create('main');
 
-  watch(images.src,        function() { gulp.start('images'); });
-  watch(svgs.svg.src,      function() { gulp.start('svgs'); });
-  watch(config.sourceDirectory + 'js/**',       function() { gulp.start('eslint', 'webpack'); });
 
-  // We set 'sass' as a dependency of 'cssmin', so
-  // we actually call cssmin when sass changes. This
-  // means SASS runs, and then our CSSMIN task.
-  watch(sass.src,          function() { gulp.start('cssmin'); });
+gulp.task('watch', [
+  'css',
+  'js',
+], () => {
+  const justReload = [
+    path.join(config.views, '**', '*.html'),
+  ];
 
-  if (argv.proto) {
-    global.pugFirstCompile = true
-    watch(pug.src,        function() { gulp.start('pug'); });
-  }
+  bs.init(config.options.browsersync);
+
+  gulp.watch(justReload, bs.reload);
+  gulp.watch(path.join(config.source.sass, '**', '*.scss'), ['css']);
+  gulp.watch(path.join(config.source.js, '**', '*.js'), ['js']);
 });

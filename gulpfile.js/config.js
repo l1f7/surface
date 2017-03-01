@@ -41,6 +41,8 @@ module.exports = {
     root: path.join(distPath, 'root'),
   },
 
+  views: path.join('.', '{{ cookiecutter.short_name }}', 'templates'),
+
   options: {
     autoprefixer: {
       browsers: ['last 2 version'],
