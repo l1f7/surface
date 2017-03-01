@@ -1,7 +1,7 @@
 require('jquery'); // eslint-disable-line no-unresolved
 
 ((function App(window, $) {
-  // Vendor/Bower Libraries
+  // Vendor Libraries
   // This also ensures that these libraries are bundled specifically
   // into this main App.js file instead of being included multiple
   // times into the children chunks

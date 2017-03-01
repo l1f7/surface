@@ -1,4 +1,5 @@
 var gulp    = require('gulp')
+,   config  = require('../config/index.js')
 ,   images  = require('../config/images')
 ,   svgs    = require('../config/svgs')
 ,   sass    = require('../config/sass')
@@ -12,7 +13,7 @@ gulp.task('watch', function() {
 
   watch(images.src,        function() { gulp.start('images'); });
   watch(svgs.svg.src,      function() { gulp.start('svgs'); });
-  watch(webpack.src,       function() { gulp.start('eslint', 'webpack'); });
+  watch(config.sourceDirectory + 'js/**',       function() { gulp.start('eslint', 'webpack'); });
 
   // We set 'sass' as a dependency of 'cssmin', so
   // we actually call cssmin when sass changes. This

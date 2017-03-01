@@ -6,8 +6,9 @@ const commonConfig = require('./webpack.base.js');
 
 module.exports = function (env) {
   return webpackMerge(commonConfig(), {
-    // eval-source-map is faster for development
-    devtool: 'eval-source-map',
+    // cheap-module-eval-source-map is faster for development
+    // while providing full line by line source mapping
+    devtool: 'cheap-module-eval-source-map',
     plugins: [
       new webpack.DefinePlugin({
         DEBUG: (argv.dev || argv.proto) ? true : false,

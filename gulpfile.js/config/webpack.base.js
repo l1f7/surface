@@ -14,9 +14,8 @@ module.exports = function (env) {
     // the key is the name of the js file and it's
     // value is the "entry point" (source file) for
     // the javascript input
-    src : jsSrc + '**',
     entry: {
-      app:  [jsSrc + 'App.js']
+      app: jsSrc + 'App.js',
     },
     output: {
       path: jsDest,
@@ -25,43 +24,57 @@ module.exports = function (env) {
       // filename: '[name].[chunkhash].js',
       // chunkFilename: '[id].[chunkhash].js'
     },
-    resolve: {
-      extensions: ['', '.js', '.jsx'],
-      modulesDirectories: ['node_modules', 'raw/bower', 'raw/js'],
-      root: __dirname,
-      alias: {
-        // Prefer unminified CommonJS/AMD files over bundled dist versions.
-        jquery: "jquery/src/jquery"
-      }
-    },
     module: {
-      loaders: [
+      rules: [
         {
           test: /\.js$/,
+          exclude: /(node_modules|bower_components|frontend\/bower)/,
           loader: 'babel-loader',
-          exclude: /node_modules/
+          options: {
+            cacheDirectory: true,
+          },
         },
         {
-          test: require.resolve("jquery"),
-          loader: "expose-loader?$!expose-loader?jQuery"
-        }
-      ]
+          test: require.resolve('jquery'),
+          loader: 'expose-loader?$!expose-loader?jQuery',
+        },
+      ],
     },
+    resolve: {
+      modules: ['node_modules', 'frontend/bower', 'frontend/js'],
+      alias: {
+        // Prefer unminified CommonJS/AMD files over bundled dist versions.
+        'jquery': 'jquery/src/jquery',
+      },
+    },
+    context: path.resolve('.'),
     plugins: [
       // new webpack.optimize.CommonsChunkPlugin({
-        // name: ['common', 'manifest'] // Specify the common bundle's name.
+      //   name: 'vendor',
+      //   filename: "vendor.app.js",
+      //   minChunks(module) {
+      //     // include all imported scripts that are in the node_modules
+      //     // or raw/js/vendor directories
+      //     return module.context && module.context.indexOf('node_modules') !== -1
+      //       || module.context && module.context.indexOf('raw/js/vendor') !== -1;
+      //   },
       // }),
       // Limit the maximum chunk count with --optimize-max-chunks 15
       // new webpack.optimize.LimitChunkCountPlugin({maxChunks: 15}),
+
       // Limit the minimum chunk size with --optimize-min-chunk-size 10000 (in chars)
       // new webpack.optimize.MinChunkSizePlugin({minChunkSize: 10000}),
-      // Deduplicate shared code, adds some overhead to entry chunk
-      new webpack.optimize.DedupePlugin(),
+
       // Optmizie chunk order
-      new webpack.optimize.OccurrenceOrderPlugin(),
-      // Dont emit assets that include errors
-      new webpack.NoErrorsPlugin()
-    ]
+      // new webpack.optimize.OccurrenceOrderPlugin(),
+
+      // webpack.NoErrorsPlugin() is an optional plugin that tells the
+      // reloader to not reload if there is an error. The error is simply
+      // printed in the console, and the page does not reload.
+      // If you do not have this plugin enabled and you have an error,
+      // a red screen of death is thrown.
+      // new webpack.NoErrorsPlugin()
+    ],
   }
 
   return webpackConfig
