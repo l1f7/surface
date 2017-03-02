@@ -28,5 +28,4 @@ gulp.task('images', () =>
     .pipe($.changed(config.build.images))
     .pipe($.imagemin(config.options.imagemin))
     .pipe(gulp.dest(config.build.images))
-    .pipe(bs.stream()),
-);
+    .pipe(bs.stream()));

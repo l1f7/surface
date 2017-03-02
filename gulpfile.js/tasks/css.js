@@ -37,5 +37,4 @@ gulp.task('css', () =>
     .pipe(config.prod ? $.util.noop() : $.sourcemaps.write())
     .pipe($.size()) // @TODO: Is this needed?
     .pipe(gulp.dest(config.build.css))
-    .pipe(bs.stream()),
-);
+    .pipe(bs.stream()));
