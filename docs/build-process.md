@@ -6,9 +6,9 @@ The `package.json` contains a number of scripts for performing various tasks on 
 `npm` scripts can get a little *verbose* though, so here’s a breakdown of what each one will do for you.
 
 ### `npm run start`
-1. Runs the [`lint:versions`](#npm-run-lint-versions) script
+1. Runs the [`lint:versions`](#npm-run-lintversions) script
 2. Sets <var>NODE_ENV</var> to `development`
-3. Runs the Gulp [`watch`](#gulp-watch) task
+3. Runs the Gulp [`watch`](#watch) task
 
 If you’re working with Docker, you can run `npm run start:docker` instead which does all of the above, as well as setting <var>VIRTUAL_ENV</var> to `docker`.
 
@@ -17,7 +17,7 @@ If you’re working on a prototype build, you can run `npm run start:proto`. Thi
 ### `npm run build`
 If you just need to compile all the static assets from source, run this script.
 1. Sets <var>NODE_ENV</var> to `development`
-2. Runs the Gulp [`build`](#gulp-build) task
+2. Runs the Gulp [`build`](#build) task
 
 Use `npm run build:proto` or `npm run build:prod` to set <var>NODE_ENV</var> to `prototype` or `production`, respectively.
 
@@ -25,7 +25,7 @@ Use `npm run build:proto` or `npm run build:prod` to set <var>NODE_ENV</var> to 
 1. Checks your current version of `node` against the version in `.nvmrc`. Gives the all-clear if it maches, or exits back to the prompt if not.
 
 ### `npm run lock`
-1. Runs the [`lint:versions`](#npm-run-lint-versions) script
+1. Runs the [`lint:versions`](#npm-run-lintversions) script
 2. Runs `npm shrinkwrap` with the `--dev` flag to include packages in `devDependencies`
 3. Replaces `https` with `http` in resolved URLs
 
