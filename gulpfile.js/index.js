@@ -14,26 +14,33 @@
   Gulp configuration or task files on the fly. It will automatically
   reload Gulp on changes, and will also persist Gulp through an error.
 */
+/* eslint-disable import/no-extraneous-dependencies */
 
 const gulp = require('gulp');
 
-// Make sure we have access to the ES2015 Promise format
-// which some of the Node libraries have started using
-// but which not all versions of Node support yet
+/**
+ * Polyfill promises.
+ *
+ * Make sure we have access to the ES2015 Promise format which some Node
+ * packages have started using but which not all versions of Node support yet.
+ */
 require('es6-promise').polyfill();
 
+/**
+ * Load task modules.
+ */
 require('./tasks/watch');
 require('./tasks/css');
-require('./tasks/icons');
+// require('./tasks/icons');
 require('./tasks/images');
-require('./tasks/js');
+require('./tasks/webpack');
 
 
 gulp.task('build', [
   'css',
-  'icons',
+  // 'icons',
   'images',
-  'js',
+  'webpack',
 ]);
 
 gulp.task('default', ['build']);
