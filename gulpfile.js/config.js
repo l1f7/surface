@@ -9,6 +9,7 @@ const path = require('path');
 const proto = process.env.NODE_ENV === 'prototype';
 const dev = process.env.NODE_ENV === 'development';
 const prod = process.env.NODE_ENV === 'production';
+const docker = process.env.VIRTUAL_ENV === 'docker';
 
 const sourcePath = path.join('.', 'frontend');
 const protoPath = path.join('.', 'prototype');
@@ -20,6 +21,7 @@ module.exports = {
   proto,
   dev,
   prod,
+  docker,
 
   source: {
     fonts: path.join(sourcePath, 'assets', 'fonts'),
@@ -50,8 +52,15 @@ module.exports = {
 
     browsersync: {
       logPrefix: '£',
-      open: false,
+      ghostMode: {
+        clicks: true,
+        forms: true,
+        scroll: false,
+      },
+      server: proto ? { baseDir: protoPath } : false,
+      proxy: docker ? 'backend:8000' : 'localhost:8000',
       port: '1337',
+      open: !docker,
     },
 
     imagemin: {
