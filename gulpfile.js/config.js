@@ -58,7 +58,7 @@ module.exports = {
         scroll: false,
       },
       server: proto ? { baseDir: protoPath } : false,
-      proxy: docker ? 'backend:8000' : 'localhost:8000',
+      proxy: proto ? false : docker ? 'backend:8000' : 'localhost:8000',
       port: '1337',
       open: !docker,
     },
