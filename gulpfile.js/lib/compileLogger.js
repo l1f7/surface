@@ -36,6 +36,10 @@ module.exports = (err, stats) => {
     const compileTime = prettifyTime(stats.endTime - stats.startTime);
 
     gutil.log(gutil.colors[statColor](stats));
-    gutil.log('Compiled with', gutil.colors.cyan('webpack:development'), 'in', gutil.colors.magenta(compileTime));
+    gutil.log(
+      'Compiled with',
+      gutil.colors.cyan(`webpack:${process.env.NODE_ENV}`),
+      'in',
+      gutil.colors.magenta(compileTime));
   }
 };
