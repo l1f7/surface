@@ -1,61 +1,26 @@
 /**
- * Pug
- * ----------------------------------------------------
- * Super terse html preprocessor awesomeness
+ * Pug template compilation.
+ *
+ * Currently re-renders the entire template folder.
  */
+/* eslint-disable import/no-extraneous-dependencies */
 
-var bs              = require('browser-sync')
-,   config          = require('../config/pug')
-,   gulp            = require('gulp')
-,   pug             = require('gulp-pug')
-,   print           = require('gulp-print')
-,   pugInheritance  = require('gulp-pug-inheritance')
-,   changed         = require('gulp-changed')
-,   cached          = require('gulp-cached')
-,   gulpif          = require('gulp-if')
-,   filter          = require('gulp-filter')
-,   handleErrors    = require('../lib/handleErrors');
+const config = require('../config');
+const gulp = require('gulp');
+const path = require('path');
 
-function checkForPartials(file) {
-  var pathChunks = file.relative.split('/');
-  for (var i = pathChunks.length - 1; i >= 0; i--) {
-    if (pathChunks[i].charAt(0) === '_'){
-      return
-    }
-  };
-  return file
-}
+const $ = require('gulp-load-plugins')();
+const bs = require('browser-sync').get('main');
 
-gulp.task('pug', function() {
-  if (global.pugFirstCompile === undefined){
-    return gulp.src(config.src)
-      //filter out partials (folders and files starting with "_" )
-      .pipe(filter(checkForPartials))
-      .pipe(pug({ pretty: true }))
-      .on('error', handleErrors)
-      .pipe(gulp.dest(config.dest))
-      .pipe(bs.reload({stream:true}));
 
-  } else {
-    return gulp.src(config.src)
-
-      //only pass unchanged *main* files and *all* the partials
-      .pipe(changed(config.dest, {extension: '.html'}))
-
-      //filter out unchanged partials, but it only works when watching
-      .pipe(cached('pug'))
-
-      //find files that depend on the files that have changed
-      .pipe(pugInheritance({basedir: config.srcDir}))
-
-      //filter out partials (folders and files starting with "_" )
-      .pipe(filter(checkForPartials))
-
-      //process pug templates
-      .pipe(pug({ pretty: true }))
-
-      .on('error', handleErrors)
-      .pipe(gulp.dest(config.dest))
-      .pipe(bs.reload({stream:true}));
-  }
-});
+gulp.task('pug', () =>
+  gulp
+    .src(path.join(config.source.pug, '**', '*.pug'))
+    .pipe($.pug({ pretty: true }))
+    .on('error', function handleError(err) {
+      $.util.log(err.message);
+      bs.notify(err.message, 10000);
+      this.emit('end');
+    })
+    .pipe(gulp.dest(config.build.pug))
+    .pipe(config.proto ? bs.reload() : $.util.noop()));

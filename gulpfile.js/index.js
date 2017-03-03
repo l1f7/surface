@@ -33,6 +33,7 @@ require('./tasks/watch');
 require('./tasks/css');
 // require('./tasks/icons');
 require('./tasks/images');
+require('./tasks/pug');
 require('./tasks/webpack');
 
 
