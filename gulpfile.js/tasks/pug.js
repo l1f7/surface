@@ -5,12 +5,13 @@
  */
 /* eslint-disable import/no-extraneous-dependencies */
 
-const config = require('../config');
 const gulp = require('gulp');
+const $ = require('gulp-load-plugins')();
+
+const bs = require('browser-sync').get('main');
 const path = require('path');
 
-const $ = require('gulp-load-plugins')();
-const bs = require('browser-sync').get('main');
+const config = require('../config');
 
 
 gulp.task('pug', () =>

@@ -3,11 +3,12 @@
  */
 /* eslint-disable import/no-extraneous-dependencies */
 
-const config = require('../config');
 const gulp = require('gulp');
-const path = require('path');
 
 const bs = require('browser-sync').create('main');
+const path = require('path');
+
+const config = require('../config');
 
 
 gulp.task('watch', [

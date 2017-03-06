@@ -1,10 +1,8 @@
 /**
- * SVG Tasks
- * ----------------------------------------------------
- * Three things are happening in here:
- *    1. Minifying/cleanup of SVG images
- *    2. #1 + conversion to pug templates for svg files
- *       that are to be inlined in the HTML
+ * Generate SVG icons.
+ *
+ * The `images` task will process SVG images as well; these are specifically
+ * for SVGs as part of an icon set.
  */
 /* eslint-disable import/no-extraneous-dependencies */
 
@@ -19,6 +17,14 @@ const config = require('../config');
 
 gulp.task('icons', ['icons:includes', 'icons:sprite']);
 
+/**
+ * Optimise SVGs for template inclusion.
+ *
+ * Order-of-operations:
+ *     1. Check if image differs from file in build dir
+ *     2. Optimise image (uses SVGO)
+ *     3. Write image to template `_includes` dir
+ */
 gulp.task('icons:includes', () =>
   gulp
     .src(path.join(config.source.icons, '**', '*.svg'))
@@ -31,6 +37,17 @@ gulp.task('icons:includes', () =>
     })
     .pipe(gulp.dest(config.build.includes)));
 
+/**
+ * Collect icons into a single sprite file.
+ *
+ * Order-of-operations:
+ *     1. Check if image differs from file in build dir
+ *     2. Optimise SVG and build spritesheet
+ *     3. Write image to images dir
+ *     4. Stream updated sprite to BrowserSync
+ *
+ * @see config.js for svgsprite options.
+ */
 gulp.task('icons:sprite', () =>
   gulp
     .src(path.join(config.source.icons, '**', '*.svg'))
