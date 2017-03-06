@@ -15,7 +15,6 @@ const bs = require('browser-sync').get('main');
 const path = require('path');
 
 const config = require('../config');
-const handleErrors = require('../lib/handleErrors');
 
 
 gulp.task('icons', ['icons:includes', 'icons:sprite']);
@@ -25,7 +24,11 @@ gulp.task('icons:includes', () =>
     .src(path.join(config.source.icons, '**', '*.svg'))
     .pipe($.changed(config.build.includes))
     .pipe($.imagemin(config.options.imagemin))
-    .on('error', handleErrors)
+    .on('error', function handleError(err) {
+      $.util.log(err.message);
+      bs.notify(`<pre style="text-align:left">${err.message}</pre>`, 10000);
+      this.emit('end');
+    })
     .pipe(gulp.dest(config.build.includes)));
 
 gulp.task('icons:sprite', () =>
@@ -33,6 +36,10 @@ gulp.task('icons:sprite', () =>
     .src(path.join(config.source.icons, '**', '*.svg'))
     .pipe($.changed(config.build.images))
     .pipe($.svgSprite(config.options.svgsprite))
-    .on('error', handleErrors)
+    .on('error', function handleError(err) {
+      $.util.log(err.message);
+      bs.notify(`<pre style="text-align:left">${err.message}</pre>`, 10000);
+      this.emit('end');
+    })
     .pipe(gulp.dest(config.build.images))
     .pipe(bs.stream()));

@@ -5,17 +5,18 @@
  * prevents running tasks from stopping (just won't output anything).
  *
  * @module surface/handleErrors
- * @param  {Object} errorObject
+ * @param  {Object} err
  * @since  1.0.0
  */
 /* eslint-disable import/no-extraneous-dependencies */
 
-const notify = require('gulp-notify');
+const $ = require('gulp-load-plugins')();
 
 
-module.exports = (errorObject, callback) => {
-  notify.onError(errorObject.toString().split(': ').join(':\n')).apply(this, arguments);
+module.exports = (err, callback) => {
+  // const cleanError = err.message.split(': ').join(':\n');
 
-  // Keep gulp from hanging on this task
+  $.util.log(err.message);
+  // Keep gulp from hanging on this task.
   if (typeof this.emit === 'function') this.emit('end');
 };

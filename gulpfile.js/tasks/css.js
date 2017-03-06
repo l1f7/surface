@@ -12,13 +12,14 @@
  */
 /* eslint-disable import/no-extraneous-dependencies */
 
-const config = require('../config');
 const gulp = require('gulp');
-const path = require('path');
-
 const $ = require('gulp-load-plugins')();
+
 const autoprefixer = require('autoprefixer');
 const bs = require('browser-sync').get('main');
+const path = require('path');
+
+const config = require('../config');
 
 
 gulp.task('css', () =>
@@ -28,7 +29,7 @@ gulp.task('css', () =>
       .pipe($.sass(config.options.sass))
       .on('error', function handleError(err) {
         $.util.log(err.message);
-        bs.notify(err.message, 10000);
+        bs.notify(`<pre style="text-align:left">${err.message}</pre>`, 10000);
         this.emit('end');
       })
       .pipe($.postcss([

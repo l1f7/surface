@@ -19,7 +19,7 @@ gulp.task('pug', () =>
     .pipe($.pug({ pretty: true }))
     .on('error', function handleError(err) {
       $.util.log(err.message);
-      bs.notify(err.message, 10000);
+      bs.notify(`<pre style="text-align:left">${err.message}</pre>`, 10000);
       this.emit('end');
     })
     .pipe(gulp.dest(config.build.pug))
