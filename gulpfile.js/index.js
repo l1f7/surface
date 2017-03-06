@@ -29,11 +29,11 @@ require('es6-promise').polyfill();
 /**
  * Load task modules.
  */
+require('./tasks/watch');
 require('./tasks/css');
 require('./tasks/icons');
 require('./tasks/images');
 require('./tasks/pug');
-require('./tasks/watch');
 require('./tasks/webpack');
 
 
