@@ -65,6 +65,10 @@ module.exports = {
       open: !docker,
     },
 
+    csswring: {
+      preserveHacks: true,
+    },
+
     imagemin: {
       progressive: true,
       interlaced: true,

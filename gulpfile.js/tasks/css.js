@@ -17,10 +17,19 @@ const $ = require('gulp-load-plugins')();
 
 const autoprefixer = require('autoprefixer');
 const bs = require('browser-sync').get('main');
+const csswring = require('csswring');
 const path = require('path');
 
 const config = require('../config');
 
+
+const pcssTasks = [
+  autoprefixer(config.options.autoprefixer),
+];
+
+if (config.prod) {
+  pcssTasks.push(csswring(config.options.csswring));
+}
 
 gulp.task('css', () =>
   gulp
@@ -32,9 +41,7 @@ gulp.task('css', () =>
         bs.notify(`<pre style="text-align:left">${err.message}</pre>`, 10000);
         this.emit('end');
       })
-      .pipe($.postcss([
-        autoprefixer(config.options.autoprefixer),
-      ]))
+      .pipe($.postcss(pcssTasks))
     .pipe(config.prod ? $.util.noop() : $.sourcemaps.write())
     .pipe($.size()) // @TODO: Is this needed?
     .pipe(gulp.dest(config.build.css))
