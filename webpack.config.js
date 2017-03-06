@@ -132,7 +132,7 @@ if (process.env.NODE_ENV === 'development') {
    * Faster line-by-line source mapping during development.
    * @see https://webpack.js.org/configuration/devtool/#for-development
    */
-  config.devtool = 'cheap-module-eval-source-map';
+  webpackConfig.devtool = 'cheap-module-eval-source-map';
 }
 
 if (process.env.NODE_ENV === 'production') {
@@ -140,13 +140,13 @@ if (process.env.NODE_ENV === 'production') {
    * Full-featured source maps and uglification for production.
    * @see https://webpack.js.org/configuration/devtool/#for-production
    */
-  config.devtool = 'source-map';
+  webpackConfig.devtool = 'source-map';
     /**
      * Minify the output JS.
      * @see  https://webpack.js.org/plugins/uglifyjs-webpack-plugin/
      * @todo Update plugin class to contrib package.
      */
-  config.plugins.push(new webpack.optimize.UglifyJsPlugin({
+  webpackConfig.plugins.push(new webpack.optimize.UglifyJsPlugin({
     beautify: false,
     mangle: {
       screw_ie8: true,
