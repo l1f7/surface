@@ -41,18 +41,11 @@
     "eslint-plugin-import": "^2.2.0",
     "expose-loader": "^0.7.3",
     "gulp": "^3.9.1",
-    "gulp-cached": "^1.1.1",
     "gulp-changed": "^2.0.0",
-    "gulp-cssmin": "0.1.7",
-    "gulp-eslint": "^3.0.1",
-    "gulp-html2pug": "^0.0.2",
     "gulp-imagemin": "^3.1.1",
     "gulp-load-plugins": "^1.5.0",
-    "gulp-notify": "^3.0.0",
     "gulp-postcss": "^6.3.0",
     "gulp-pug": "^3.2.0",
-    "gulp-pug-inheritance": "^0.2.1",
-    "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.1.0",
     "gulp-size": "^2.1.0",
     "gulp-sourcemaps": "^2.4.1",
@@ -63,7 +56,6 @@
     "stylelint-config-recess-order": "^1.0.0",
     "stylelint-order": "^0.3.0",
     "stylelint-scss": "^1.4.3",
-    "text-table": "^0.2.0",
     "webpack": "^2.2.1"
   }
 }
