@@ -38,7 +38,7 @@ module.exports = {
   build: {
     css: path.join(distPath, 'css'),
     fonts: path.join(distPath, 'fonts'),
-    icons: path.join(distPath, 'fonts'),
+    includes: path.join('.', '{{ cookiecutter.short_name }}', 'templates', '_includes'),
     images: path.join(distPath, 'images'),
     js: path.join(distPath, 'js'),
     pug: path.join('.', 'prototype'),
@@ -80,6 +80,15 @@ module.exports = {
       ],
       outputStyle: 'nested',
       imagePath: '../images',
+    },
+
+    svgsprite: {
+      mode: {
+        symbol: {
+          dest: './',
+          sprite: 'sprite.svg',
+        },
+      },
     },
   },
 };
