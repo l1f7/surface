@@ -53,7 +53,7 @@
     "gulp-svgmin": "^1.2.3",
     "gulp-util": "^3.0.8",
     "stylelint": "^7.9.0",
-    "stylelint-config-recess-order": "^1.0.0",
+    "stylelint-config-recess-order": "^1.0.1",
     "stylelint-order": "^0.3.0",
     "stylelint-scss": "^1.4.3",
     "webpack": "^2.2.1"
