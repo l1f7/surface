@@ -65,17 +65,18 @@ Programming languages and configuration:
 ## Configuring
 ### Node
 1. Install currently-used Node versions  
-`nvm install 0.10`  
-`nvm install 4`
+`nvm install 0.10` [<sup name="a1">1</sup>](#f1)  
+`nvm install 4` [<sup name="a1">1</sup>](#f1)  
+`nvm install 6`
 2. Set the default version  
-`nvm alias default 4`
+`nvm alias default 6`
 3. Set Python version  
-`npm config set python python2.7`
+`npm config set python python2.7` [<sup name="a2">2</sup>](#f2)
 4. Install global Node utilities  
 `npm install -g avn`  
 `npm install -g avn-nvm`  
 `npm install -g avn-n`  
-`npm install -g bower`  
+`npm install -g bower`[<sup name="a1">1</sup>](#f1)  
 `npm install -g eslint`  
 `npm install -g gulp`  
 `npm install -g stylelint`
@@ -83,6 +84,13 @@ Programming languages and configuration:
 `avn setup`
 
 **Note:** Repeat steps 3–5 for all additional Node versions.
+
+---
+
+<sup name="f1">**1**</sup> Needed primarily for legacy projects. [↩](#a1)
+
+<sup name="f2">**2**</sup> Forces `npm` to use Python 2.7 even though your project may run on 3, due to a dependency requirement (see [this comment](https://github.com/nodejs/node-gyp/issues/746#issuecomment-281911560)). [↩](#a2)
+
 
 [Homebrew]: http://brew.sh/
 
