@@ -72,7 +72,7 @@ tk
 To understand the different environment vars and what they should be set to, consider the context of your work.
 
 * `prototype`  
-When you need to quickly iterate on project ideas/layouts/modules before the project moves into development.
+When you need to quickly iterate on project ideas/layouts/modules before the project moves into development and you don't rely on the website backend to be operational.
 * `production`  
 Specifically for doing builds before you push to production. In the future we may run this through CI and add further optimizations to static assets.
 * `docker`  
