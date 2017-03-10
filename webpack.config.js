@@ -20,8 +20,9 @@ const webpack = require('webpack');
 const webpackConfig = {
   /**
    * The entry object is where Webpack looks to start building the bundle.
-   * Setting the path wth `path.join()` causes an error, but `path.resolve()`
-   * seems to work. ¯\_(ツ)_/¯
+   * Setting the path wth `path.join()` causes an error, but since `path.resolve()`
+   * generates an absolute path it seems to work. ¯\_(ツ)_/¯
+   *
    *
    * @prop {Object} entry - Keys will be the bundled script filename.
    */
@@ -29,8 +30,20 @@ const webpackConfig = {
     app: path.resolve(config.source.js, 'App.js'),
   },
 
+  /**
+   * The base directory, an absolute path, for resolving entry points
+   * and loaders from configuration. This makes our configuration
+   * independent from CWD (current working directory).
+   *
+   * @prop {String} context - Set the base directory.
+   */
   context: path.resolve(__dirname),
 
+  /**
+   * Note: `[name]` resolves to each key, or bundle, of the entry object.
+   * The `chunkFilename` and `[chunkhash]` are experimental settings for
+   * the `CommonsChunkPlugin`.
+   */
   output: {
     path: path.join(config.build.js),
     publicPath: path.join(config.build.js),
@@ -58,7 +71,14 @@ const webpackConfig = {
       },
 
       /**
-       * Some black majick to ensure jQuery is available when called.
+       * Webpack Expose Loader
+       *
+       * This loader resolves all imports/requires of the 'jquery' module and
+       * exposes the `$` and `jQuery` objects to the global window. This allows
+       * us to use jQuery outside of our main scripts file, for example hard-coded
+       * into templates.
+       *
+       * @see https://github.com/webpack-contrib/expose-loader
        */
       {
         test: require.resolve('jquery'),
