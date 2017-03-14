@@ -13,7 +13,7 @@ const docker = process.env.VIRTUAL_ENV === 'docker';
 
 const sourcePath = path.join('.', 'frontend');
 const protoPath = path.join('.', 'prototype');
-const sitePath = path.join('.', '{{ cookiecutter.short_name }}', 'static');
+const sitePath = path.join('.', 'website', '{{ cookiecutter.short_name }}', 'static');
 
 const distPath = proto ? protoPath : sitePath;
 const proxyServer = docker ? 'backend:8000' : 'localhost:8000';
@@ -38,18 +38,18 @@ module.exports = {
   build: {
     css: path.join(distPath, 'css'),
     fonts: path.join(distPath, 'fonts'),
-    includes: path.join('.', '{{ cookiecutter.short_name }}', 'templates', '_includes'),
+    includes: path.join('.', 'website', '{{ cookiecutter.short_name }}', 'templates', '_includes'),
     images: path.join(distPath, 'images'),
     js: path.join(distPath, 'js'),
     pug: path.join('.', 'prototype'),
     root: path.join(distPath, 'root'),
   },
 
-  views: path.join('.', '{{ cookiecutter.short_name }}', 'templates'),
+  views: path.join('.', 'website', '{{ cookiecutter.short_name }}', 'templates'),
 
   options: {
     autoprefixer: {
-      browsers: ['last 2 version'],
+      browsers: ['last 2 versions'],
     },
 
     browsersync: {
