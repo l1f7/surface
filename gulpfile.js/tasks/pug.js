@@ -23,5 +23,4 @@ gulp.task('pug', () =>
       bs.notify(`<pre style="text-align:left">${err.message}</pre>`, 10000);
       this.emit('end');
     })
-    .pipe(gulp.dest(config.build.pug))
-    .pipe(config.proto ? bs.reload() : $.util.noop()));
+    .pipe(gulp.dest(config.build.pug)));
