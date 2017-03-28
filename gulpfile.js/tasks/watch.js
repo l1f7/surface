@@ -10,14 +10,19 @@ const path = require('path');
 
 const config = require('../config');
 
-
-gulp.task('watch', [
+const preWatchTasks = [
   'css',
   'icons',
   'images',
-  'pug',
   'webpack',
-], () => {
+];
+
+
+if (config.proto) {
+  preWatchTasks.push('pug');
+}
+
+gulp.task('watch', preWatchTasks, () => {
   const justReload = [
     path.join(config.views, '**', '*.html'),
   ];
