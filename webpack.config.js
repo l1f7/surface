@@ -45,8 +45,8 @@ const webpackConfig = {
    * the `CommonsChunkPlugin`.
    */
   output: {
-    path: path.join(config.build.js),
-    publicPath: path.join(config.build.js),
+    path: path.resolve(config.build.js),
+    publicPath: path.resolve(config.build.js),
     filename: '[name].js',
     // filename: '[name].[chunkhash].js',
     // chunkFilename: '[id].[chunkhash].js',
