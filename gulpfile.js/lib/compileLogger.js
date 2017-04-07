@@ -1,20 +1,45 @@
-var gutil        = require("gulp-util")
-var prettifyTime = require('./prettifyTime')
-var handleErrors = require('./handleErrors')
+/**
+ * Message logging.
+ *
+ * @module surface/compileLogger
+ * @since  1.0.0
+ */
+/* eslint-disable import/no-extraneous-dependencies */
 
-module.exports = function(err, stats) {
-  if(err) throw new gutil.PluginError("webpack", err)
+const handleErrors = require('./handleErrors');
+const gutil = require('gulp-util');
 
-  var statColor = stats.compilation.warnings.length < 1 ? 'green' : 'yellow'
 
-  if(stats.compilation.errors.length > 0) {
-    stats.compilation.errors.forEach(function(error){
-      handleErrors(error)
-      statColor = 'red'
-    })
-  } else {
-    var compileTime = prettifyTime(stats.endTime - stats.startTime)
-    gutil.log(gutil.colors[statColor](stats))
-    gutil.log('Compiled with', gutil.colors.cyan('webpack:development'), 'in', gutil.colors.magenta(compileTime))
+module.exports = (err, stats) => {
+  if (err) throw new gutil.PluginError('webpack', err);
+
+  let statColor = stats.compilation.warnings.length < 1 ? 'green' : 'yellow';
+
+  function prettifyTime(milliseconds) {
+    let time = '';
+
+    if (milliseconds > 999) {
+      time = `${(milliseconds / 1000).toFixed(2)}s`;
+    } else {
+      time = `${milliseconds}ms`;
+    }
+
+    return time;
   }
-}
+
+  if (stats.compilation.errors.length > 0) {
+    stats.compilation.errors.forEach((error) => {
+      handleErrors(error);
+      statColor = 'red';
+    });
+  } else {
+    const compileTime = prettifyTime(stats.endTime - stats.startTime);
+
+    gutil.log(gutil.colors[statColor](stats));
+    gutil.log(
+      'Compiled with',
+      gutil.colors.cyan(`webpack:${process.env.NODE_ENV}`),
+      'in',
+      gutil.colors.magenta(compileTime));
+  }
+};

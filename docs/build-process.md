@@ -1,46 +1,79 @@
 # Build Processes
 
-**Note:** If you are using Docker for development you must add the `--docker` flag to the Development or Prototyping tasks below. This is mainly to configure the `browser-sync` proxy to Django. Ex. `gulp --dev --docker`
+## Node scripts
+The `package.json` contains a number of scripts for performing various tasks on the project. Running the npm script ensures the proper environment variables are set.
 
-## Development
-```sh
-gulp --dev
-```
+`npm` scripts can get a little *verbose* though, so here’s a breakdown of what each one will do for you.
 
-This is our main Gulp task, it does the following, in this order:
-  1. Optimize and minify images and SVGs into the `website/{{ cookiecutter.short_name }}/static/images` and `website/{{ cookiecutter.short_name }}/templates/includes/svgs` folders respectively
-  1. Compile, lint, and minify Sass stylesheets into the `website/{{ cookiecutter.short_name }}/static/css` directory
-  1. Lint the JavaScript, and then run it through Webpack to generate your JavaScript files into the `website/{{ cookiecutter.short_name }}/static/js` directory
-  1. Runs a `browser-sync` instance accessed at `localhost:1337` which proxies the Django server through it and then will automatically refresh every time you make changes to images, SVGs, CSS, JavaScript, or templates
+### `npm run start`
+1. Runs the [`lint:versions`](#npm-run-lintversions) script
+2. Sets <var>NODE_ENV</var> to `development`
+3. Runs the Gulp [`watch`](#watch) task
 
+If you’re working with Docker, you can run `npm run start:docker` instead which does all of the above, as well as setting <var>VIRTUAL_ENV</var> to `docker`.
 
-## Prototyping
-```
-gulp --proto
-```
+If you’re working on a prototype build, you can run `npm run start:proto`. This is the same as `start` except for setting <var>NODE_ENV</var> to `prototype`.
 
-Does essentially the same things as `gulp --dev`, but compiles your files into the `prototype/` directory and runs the `pug` task so that you can quickly iterate on project ideas/layouts/modules before the project moves into development. Output paths for assets are also modified to accomodate this.
+### `npm run build`
+If you just need to compile all the static assets from source, run this script.
+1. Sets <var>NODE_ENV</var> to `development`
+2. Runs the Gulp [`build`](#build) task
 
+Use `npm run build:proto` or `npm run build:prod` to set <var>NODE_ENV</var> to `prototype` or `production`, respectively.
 
-## Production
-```
-gulp --prod
-```
+### `npm run lint:versions`
+1. Checks your current version of `node` against the version in `.nvmrc`. Gives the all-clear if it maches, or exits back to the prompt if not.
 
-Specifically for doing builds before you push to production. It works mostly the same as the main `dev` task except that it does not run a `browser-sync` instance and does a few things which the normal `gulp dev` tasks doesn't. Namely:
-  * Compresses/uglifies the JavaScript
-  * Adds sourcemaps for JavaScript files
+### `npm run lock`
+1. Runs the [`lint:versions`](#npm-run-lintversions) script
+2. Runs `npm shrinkwrap` with the `--dev` flag to include packages in `devDependencies`
+3. Replaces `https` with `http` in resolved URLs
 
-In the future we may run this through CI and add further optimizations to static assets.
+See [`npm-shrinkwrap`’s docs](https://docs.npmjs.com/cli/shrinkwrap) for more info.
 
 
-## Linting
-```
-gulp --lint
-```
+## Gulp tasks
+These tasks can all be run individually outside of any related Node script, but using the Node script ensures the correct environment variables are passed to Gulp’s configuration and the output will be where/what you expect.
 
-Does one thing and one thing only. You guessed it. This task is designed to lint our CSS and JavaScript and will be mostly used through CI since linting is built into all other tasks.
+The following is just a basic breakdown of what processes each task is doing; see the [individual tasks](../gulpfile.js/tasks) for more.
+
+### `build`
+The default Gulp task. Runs the subsequent tasks *in parallel* to build the various static assets, excluding `watch`.
+
+### `watch`
+Does essentially the same thing as `build`, plus starts a local BrowserSync server (using environment variables to configure) and watches for changes to the source dirs to re-run the appropriate build task.
+
+### `css`
+1. Process Sass code into CSS
+2. Generate sourcemaps (in prod only)
+3. Prefix & optimize CSS
+4. Minify final CSS
+5. ~~Write CSS stats log~~
+6. Write new CSS to build dir
+7. Stream new CSS to BrowserSync
+
+### `icons`
+tk
+
+### `images`
+1. Check if image differs from file in build dir
+2. Optimise image based on file type
+3. Write image to build dir
+4. Stream new image to BrowserSync
+
+### `pug`
+tk
+
+### `webpack`
+1. Bundles all the JavaScript together.
 
 
-## Customizing Gulp
-The `gulpfile.js` directory contains all of the configuration/tasks for the various gulp tasks that are run. You generally shouldn't need to edit too much, but in case you do, it's all there and heavily documented so it should be pretty easy to dive into and understand what's going on.
+## On Environment Variables
+To understand the different environment vars and what they should be set to, consider the context of your work.
+
+* `prototype`  
+When you need to quickly iterate on project ideas/layouts/modules before the project moves into development and you don't rely on the website backend to be operational.
+* `production`  
+Specifically for doing builds before you push to production. In the future we may run this through CI and add further optimizations to static assets.
+* `docker`  
+If you’re utilising Docker containerisation (as opposed to a Python virtualenv). One day this may become our internal standard and this flag won’t be needed.

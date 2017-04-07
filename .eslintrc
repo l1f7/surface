@@ -1,0 +1,17 @@
+{
+  "root": true,
+  "extends": "airbnb-base",
+  "globals": {
+    "window": true,
+    "document": true,
+    "jQuery": false,
+    "$": true,
+    "Foundation": true
+  },
+  "rules": {
+    "max-len": [
+      1,
+      120
+    ]
+  }
+}
