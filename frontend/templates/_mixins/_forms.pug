@@ -1,13 +1,15 @@
 mixin input-text(label, value, help)
-  .form-group
+  .uk-margin
     if (label != null)
-      label(for="id_label")= label
-      if (value != null)
-        input.form-control(id="id_label", type="text", value=label)
-      else
-        input.form-control(id="id_label", type="text", placeholder=label)
+      label.uk-form-label(for="id_label")= label
+      .uk-form-controls
+        if (value != null)
+          input.uk-input(id="id_label", type="text", value=label)
+        else
+          input.uk-input(id="id_label", type="text")
     else
-      input.form-control(id="id_label", type="text", value=value)
+      .uk-form-controls
+        input.uk-input(id="id_label", type="text", value=value)
     if (help)
       .help-block!= help
 
@@ -19,7 +21,7 @@ mixin input-password(label, value, help)
       if (value != null)
         input.form-control(id="id_label", type="password", value=label)
       else
-        input.form-control(id="id_label", type="password", placeholder=label)
+        input.form-control(id="id_label", type="password")
     else
       input.form-control(id="id_label", type="password", value=value)
     if (help)
@@ -33,7 +35,7 @@ mixin input-email(label, value, help)
       if (value != null)
         input.form-control(id="id_label", type="email", value=value)
       else
-        input.form-control(id="id_label", type="email", placeholder=label)
+        input.form-control(id="id_label", type="email")
     else
       input.form-control(id="id_label", type="email", value=value)
     if (help)
@@ -45,13 +47,13 @@ mixin input-qty(label, value)
 
 
 mixin input-checkbox(label, value, help)
-  .checkbox
+  .uk-margin
     label(for="id_label")
       if (value == true)
-        input(id="id_label", type="checkbox", checked="checked")
+        input.uk-checkbox(id="id_label", type="checkbox", checked="checked")
       else
-        input(id="id_label", type="checkbox")
-      | #{label}
+        input.uk-checkbox(id="id_label", type="checkbox")
+      |  #{label}
     if (help)
       .help-block= help
 

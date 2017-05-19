@@ -24,7 +24,7 @@
   },
   "dependencies": {
     "jquery": "^2.2.3",
-    "normalize-scss": "^6.0.0",
+    "uikit": "3.0.0-beta.23",
     "throttle-debounce": "^1.0.1"
   },
   "devDependencies": {

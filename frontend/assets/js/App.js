@@ -1,3 +1,6 @@
+import UIkit from 'uikit';
+import Icons from 'uikit/dist/js/uikit-icons';
+
 require('jquery'); // eslint-disable-line no-unresolved
 
 ((function App(window, $) {
@@ -35,6 +38,12 @@ require('jquery'); // eslint-disable-line no-unresolved
        */
       init() {
         require('./base/hello')();
+
+        // loads the Icon plugin
+        UIkit.use(Icons);
+
+        // components can be called from the imported UIkit reference
+        // UIkit.notification('Test for UiKit');
 
         $(window).trigger('el.init');
       },

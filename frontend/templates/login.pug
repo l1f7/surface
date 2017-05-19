@@ -1,0 +1,21 @@
+include _mixins/_forms
+include _includes/_head
+
+body.l-body
+  <!--[if lt IE 9]><p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p><![endif]-->
+
+  .uk-offcanvas-content
+    .uk-section.uk-section-small.uk-flex.uk-flex-middle(uk-height-viewport)
+      .uk-container
+        .uk-width-medium
+          h1.uk-heading-primary Login
+          form.uk-form-stacked
+            +input-text('Email')
+            +input-text('Password')
+            +input-checkbox('Stay signed in', true)
+            a.uk-button.uk-button-primary.uk-width-1-1(href="/homepage.html") Login
+            p.uk-text-small Forgot your password? <a href="#">Click Here</a>
+
+  include _includes/_scripts
+
+</html>

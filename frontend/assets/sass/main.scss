@@ -1,8 +1,22 @@
-@charset 'utf-8';
 //
-// Include our custom SASS
+// Base variables and mixins
+@import "base/_base.scss";
+
 //
-@import 'base/__base';
-@import 'vendor/__vendor';
-@import 'modules/__modules';
-@import 'streamfields/__streamfields';
+// Default variables and mixins
+@import "uikit/src/scss/variables-theme.scss";
+@import "uikit/src/scss/mixins-theme.scss";
+
+//
+// UiKit Theming variables and mixins
+@import "theme/_import.scss";
+
+//
+// UIkit
+@import "uikit/src/scss/uikit-theme.scss";
+
+//
+// Custom
+@import "custom/_custom.scss";
+@import "streamfields/_streamfields.scss";
+@import "vendor/_vendor.scss";

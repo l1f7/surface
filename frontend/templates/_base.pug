@@ -2,15 +2,15 @@ include _mixins/_forms
 include _mixins/_elements
 include _includes/_head
 
-body.l-sitewrap
+body.l-body
   <!--[if lt IE 9]><p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p><![endif]-->
 
-  include _includes/_site_header
+  .uk-offcanvas-content
+    include _includes/_site_header
 
-  .l-content
     block content
 
-  include _includes/_site_footer
+    include _includes/_site_footer
 
   include _includes/_scripts
 

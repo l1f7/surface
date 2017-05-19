@@ -33,7 +33,7 @@ if (config.prod) {
 
 gulp.task('css', () =>
   gulp
-    .src(path.join(config.source.sass, '**', '*.scss'), { base: config.source.sass })
+    .src(path.join(config.source.sass, '**', 'main.scss'), { base: config.source.sass })
     .pipe(config.prod ? $.util.noop() : $.sourcemaps.init())
       .pipe($.sass(config.options.sass))
       .on('error', function handleError(err) {

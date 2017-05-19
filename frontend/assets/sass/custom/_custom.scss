@@ -1,0 +1,39 @@
+.tm-header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+
+  .uk-sticky-fixed {
+    background: $c-white;
+    @extend .uk-box-shadow-large;
+  }
+}
+
+.tm-hero {
+  min-height: 100vh;
+  position: relative;
+}
+
+@media (min-width: $breakpoint-medium) {
+  .th-callout {
+    // margin-left: -25px;
+    // margin-right: -25px;
+  }
+
+  .th-callout-above {
+    z-index: 2;
+    position: relative;
+  }
+
+  .th-callout-content {
+    margin-top: 100px;
+    margin-left: -50px;
+  }
+
+  .th-callout-video {
+    margin-right: -50px;
+    z-index: 1;
+    position: relative;
+  }
+}
