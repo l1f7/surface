@@ -3,7 +3,7 @@
 //
 // Logs a Lift Interactive credit to the console.
 //
-export default function hello() {
+export default function initGreeting() {
   const message = 'MADE BY LIFT | liftinteractive.com';
 
   if (navigator.userAgent.toLowerCase().indexOf('chrome') > -1) {
