@@ -1,4 +1,6 @@
-const $progImgs = $('.js-progressive');
+const throttle = require('throttle-debounce/throttle');
+
+let $progImgs;
 
 /**
  * SETUP IMAGES
@@ -7,6 +9,8 @@ const $progImgs = $('.js-progressive');
  * thumbnail's dimensions.
  */
 function setupImages() {
+  $progImgs = $('.js-progressive');
+
   $progImgs.each(function setupImage() {
     const $img = $(this);
     const width = $img.data('width');
@@ -99,12 +103,10 @@ function scrolling() {
   });
 }
 
-function progressiveImages() {
+export default function initProgressiveImages() {
   setupImages();
-  $(window).scroll($.throttle(250, scrolling));
+  $(window).scroll(throttle(250, scrolling));
   $(window).on('el.init', () => {
     scrolling();
   });
 }
-
-module.exports = progressiveImages;

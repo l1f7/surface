@@ -1,29 +1,14 @@
+import jQuery from 'jquery';
+
 import UIkit from 'uikit';
 import Icons from 'uikit/dist/js/uikit-icons';
 
-require('jquery'); // eslint-disable-line no-unresolved
+import initGreeting from './base/hello';
+import initCSRFToken from './base/csrf';
+import initAjaxForms from './base/ajaxForms';
+// import initProgressiveImages from './base/progressiveImages';
 
 ((function App(window, $) {
-  /**
-   * Vendor libraries.
-   *
-   * This also ensures that these libraries are bundled specifically
-   * into this main App.js file instead of being included multiple
-   * times into the children chunks.
-   */
-  // const debounce = require('throttle-debounce/debounce');
-  // const throttle = require('throttle-debounce/throttle');
-
-  /**
-   * Lift default modules.
-   */
-  // require('./base/ajaxForms')(); // Needed for Ajax
-  // require('./base/alerts')();
-  require('./base/csrf')(); // Needed for Ajax
-  // require('./base/prettyImageUpload')();
-  // require('./base/progressiveImages')();
-
-
   const LIFT = {
     /**
      * Base view.
@@ -37,15 +22,27 @@ require('jquery'); // eslint-disable-line no-unresolved
        * `init` is the action each view executes by default.
        */
       init() {
-        require('./base/hello')();
+        /**
+         * Lift default modules.
+         */
+        initGreeting();
+        initCSRFToken(); // Needed for Ajax
+        initAjaxForms(); // Needed for Ajax'd Snippetforms
+        // initProgressiveImages();
 
+        /**
+         * UIkit
+         */
         // loads the Icon plugin
         UIkit.use(Icons);
 
         // components can be called from the imported UIkit reference
         // UIkit.notification('Test for UiKit');
 
-        $(window).trigger('el.init');
+
+        // This is used to trigger the first render of our progressive image setup
+        // and should remain last inside this block. see: ./base/progressiveImages.js
+        // $(window).trigger('el.init');
       },
     },
   };

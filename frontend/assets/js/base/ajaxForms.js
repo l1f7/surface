@@ -8,7 +8,7 @@ function preventDoubleSubmit() {
   });
 }
 
-function init() {
+export default function initAjaxForms() {
   console.log('formajax.js init'); // eslint-disable-line
 
   preventDoubleSubmit();
@@ -93,5 +93,3 @@ function init() {
     });
   });
 }
-
-module.exports = init;

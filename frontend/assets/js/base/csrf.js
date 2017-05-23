@@ -28,7 +28,7 @@ function csrfSafeMethod(method) {
   return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
 }
 
-function setupCSRF() {
+export default function initCSRFToken() {
   // Ensure jQuery's AJAX is setup properly, no matter
   // where it might get called from
   $.ajaxSetup({
@@ -39,5 +39,3 @@ function setupCSRF() {
     },
   });
 }
-
-module.exports = setupCSRF;
