@@ -82,7 +82,16 @@ const webpackConfig = {
        */
       {
         test: require.resolve('jquery'),
-        loader: 'expose-loader?$!expose-loader?jQuery',
+        use: [
+          {
+            loader: 'expose-loader',
+            options: 'jQuery',
+          },
+          {
+            loader: 'expose-loader',
+            options: '$',
+          },
+        ],
       },
     ],
   },
