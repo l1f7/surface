@@ -9,14 +9,6 @@
 const gulp = require('gulp');
 
 /**
- * Polyfill promises.
- *
- * Make sure we have access to the ES2015 Promise format which some Node
- * packages have started using but which not all versions of Node support yet.
- */
-require('es6-promise').polyfill();
-
-/**
  * Load task modules.
  */
 require('./tasks/watch');
