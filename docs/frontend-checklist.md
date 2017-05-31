@@ -2,6 +2,16 @@
 
 **:warning: To understand how this is meant to be used, have a look at [the complete launch checklist](launch-checklist.md).**
 
+### 3rd Party Accounts
+- [ ] Mapbox is setup with a client account and with unique API access token
+- [ ] Identify third party accounts are working. (Fonts, Postmark, Wufoo, MailChimp)
+
+### Content Check
+- [ ] Newsletter forms are working
+- [ ] Social links are linked 
+- [ ] Terms of Service and Privacy pages are linked
+- [ ] Copyright year is dynamic
+
 ### Code quality
 - [ ] Clean up commented/unnecessary code
 - [ ] Check all TODO comments in the code are still relevant
