@@ -9,47 +9,33 @@
 
 #### CSS
 - [ ] CSS code matches the code style guide via `npm run lint`
-- [ ] [CSS validation](http://jigsaw.w3.org/css-validator/) passes
-- [ ] CSS classes use a consistent naming methodology (BEM-ish)
 - [ ] Flexbox usage has a non-flexbox fallback if appropriate
 - [ ] Sass code is free of vendor prefixes and IE filters
-- [x] TODO ~~CSS specificity graph is flat :rainbow:~~
 - [ ] Print stylesheets exist if appropriate
 
 #### JS
 - [ ] JS code matches the code style guide via `npm run lint`
 - [ ] JS code is written in ES2015 (ES6), ES2016 (ES7), or later
-- [ ] Data attributes are used to select elements, not classes or ids or tags
 - [ ] Polyfills are included if appropriate (Respond.js, `fetch`, `babel-polyfill`, etc.)
 
 #### HTML
 - [ ] Ensure all `a` tags have an href attribute
 - [ ] Use absolute paths for all URLs. `/thing/` not `thing/`
 - [ ] Use HTTPS, or exclude protocol from URLs `//foo.com/` not `http://foo.com/`
-- [ ] [HTML validation](https://validator.w3.org/nu/#textarea) passes
-- [ ] Links with `target="_blank"` use [`rel="noopener"`](https://mathiasbynens.github.io/rel-noopener/)
 - [ ] Links from user-submitted (untrusted) content use [`rel="nofollow"`](https://support.google.com/webmasters/answer/96569)
-
 
 ### Images
 - [ ] Images use the right file format (SVG if possible, PNG for graphics, JPG for pictures)
-- [ ] All images with the `img` tag define `width` and `height` attributes to prevent content reflows when the images load
-- [ ] Icons are built using [SVG icons](https://github.com/l1f7/surface/blob/master/core/templates/core/snippets/icon.html), with appropriate fallback if necessary
-
 
 ### Functional completeness
 - [ ] 404 page exists and is styled
 - [ ] 500 page exists and is styled
-- [ ] Maintenance page exists and is styled, if relevant
-- [ ] Site uses a mobile-friendly, zoomable viewport
 - [ ] Site has a favicon.ico
 - [ ] Platform-specific ([Apple](https://developer.apple.com/library/safari/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html), Android, Windows, etc.) meta tags and favicons are added and checked with the [Favicon checker](https://realfavicongenerator.net/favicon_checker)
 - [ ] Ensure meta tags, OpenGraph tags, Twitter card tags, and descriptions are set
 - [ ] Ensure the social meta tags only use a default sharing image if there is no page-specific image to use
 - [ ] Long-running actions (AJAX calls) trigger a spinner or other loading message in the UI
 - [ ] UI text uses correct typographic marks (`’` instead of `'`, `“”` instead of `""`)
-- [ ] Significant UI states (tabs, modals, etc.) should be tracked in the URL via query parameter or the hash
-
 
 ### Forms
 - [ ] Form fields use the right [input types with the right mobile keyboard](http://baymard.com/labs/touch-keyboard-types)
@@ -89,16 +75,7 @@ No `required`. Field `type`, `maxlength` and other consistent improvements that 
 ### Testing
 - [ ] Site tested in all relevant browsers and devices
 - [ ] Site is visually tested on non-retina, low contrast screens
-- [ ] Site works with JavaScript turned off, or the sections that do not work are [indicated to the user via messages in `<noscript>` tags](https://github.com/l1f7/surface/blob/master/core/templates/core/snippets/enable-javascript.html), styled according to the site's branding
 - [ ] ['Upgrade your browser'](https://github.com/l1f7/surface/blob/master/core/templates/core/snippets/outdated-browser.html) message displayed on unsupported browsers
-
-#### Automated tests
-- [ ] Relevant unit tests are written
-- [ ] Unit tests pass (`npm run test`)
-- [ ] If any, relevant integration tests are written
-- [ ] If any, integration tests pass (`npm run test:integration`)
-- [ ] Run site url through the [Facebook debugger](https://developers.facebook.com/tools/debug/) to check it will appear correctly if shared
-- [ ] Run the link checker [`hyperlink -r http://example.com/`](https://github.com/l1f7/surface/blob/master/docs/useful-tooling.md#hyperlink) to find & fix broken links
 
 
 ### Performance
@@ -107,7 +84,6 @@ No `required`. Field `type`, `maxlength` and other consistent improvements that 
 - [ ] Subset webfonts to remove unused characters (http://www.subsetter.com/, https://github.com/miguelsousa/source-sans-pro-subset)
 - [ ] Font files are available in WOFF, WOFF2, and EOT/OTF if relevant (IE8 / Android Stock Browser)
 - [ ] Static files are cache-busted with a query parameter (_eg._ `?v=4hjk54j6`) in production (JS/CSS/etc.)
-- [x] TODO ~~Single pages are less than the allocated performance budget (unless there's a very good reason not to)~~
 - [x] TODO ~~Critical CSS is extracted and inlined in the HTML file if relevant~~
 
 
