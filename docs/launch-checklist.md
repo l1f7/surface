@@ -34,34 +34,22 @@
 - [ ] Link to sitemap `<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">`
 - [ ] Sitemap content is relevant
 - [ ] `/robots.txt` is here
-- [ ] `/humans.txt` is here (Disallowed in robots.txt)
 
 ### Tests
 - [ ] Site tested in [all relevant browsers and devices](https://github.com/l1f7/surface/tree/master/docs#browser--device-support) by multiple people, including the client
 - [ ] Spelling and grammar checked thoroughly (copy/paste the site's content in Google Docs)
-
-### Monitoring
-- [ ] Use [SpeedCurve](https://speedcurve.com) to configure the performance monitoring on the site's most important page (homepage?)
 - [ ] [Google Search Console / Webmaster Tools](https://www.google.com/webmasters/tools) is configured on the live site
 
 ### Server configuration
-- [ ] Static files are gzipped in production (JS/CSS/SVG/etc., check this with [PageSpeed](https://developers.google.com/speed/pagespeed/insights/) or [GTmetrix](https://gtmetrix.com/)) on the live site
-- [ ] Static files are cached for a long time in production (JS/CSS/images/etc., check this with [PageSpeed](https://developers.google.com/speed/pagespeed/insights/) or [GTmetrix](https://gtmetrix.com/)) on the live site
-- [ ] Canonical URL redirect exists, if relevant (`example.com` ➞ `www.example.com`)
-
-### Deployment
-- [ ] No unnecessary files (`node_modules`) are sent to the production server, slowing down the build (look for the list of files sent to the server in the `rsync` step of the deployment)
-- [ ] CI builds trigger notifications in the appropriate Slack channel
+- [ ] Static files are gzipped in production (JS/CSS/SVG/etc., check this with [PageSpeed](https://developers.google.com/speed/pagespeed/insights/) or [GTmetrix](https://gtmetrix.com/)) on the live site [Back-end]
+- [ ] Static files are cached for a long time in production (JS/CSS/images/etc., check this with [PageSpeed](https://developers.google.com/speed/pagespeed/insights/) or [GTmetrix](https://gtmetrix.com/)) on the live site [Back-end]
+- [ ] Canonical URL redirect exists, if relevant (`example.com` ➞ `www.example.com`) [Back-end]
 
 ### Fonts
 - [ ] All of the fonts used on the project are correctly licensed, at the appropriate license level (expected pageviews/month)
-- [ ] If relevant, Analytics email alerts are set up when audience levels go over the fonts' license thresholds
-
 
 ## Documentation
 ### The README contains
-- [x] TODO ~~Continuous integration service badge for the project (CodeShip)~~
-- [ ] All of the important links as a table
 - [ ] Stage and Live site links
 - [ ] Links to Active Collab project, project run sheet, Drive folder
 - [ ] Links to design resources — Zeplin, InVision, other.
