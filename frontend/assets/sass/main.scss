@@ -1,22 +1,33 @@
+@charset "utf-8";
 //
-// Base variables and mixins
-@import "base/_base.scss";
+// Style manifest.
+//
 
-//
-// Default variables and mixins
+// 1. Config & helpers.
+@import "abstracts/functions";
+@import "abstracts/mixins";
+@import "abstracts/placeholders";
+@import "abstracts/vars.color";
+@import "abstracts/vars.type";
+@import "abstracts/vars.uikit";
+
+
+// 2. Vendor & plugin styles.
 @import "uikit/src/scss/variables-theme.scss";
 @import "uikit/src/scss/mixins-theme.scss";
-
-//
-// UiKit Theming variables and mixins
-@import "theme/_import.scss";
-
-//
-// UIkit
 @import "uikit/src/scss/uikit-theme.scss";
 
-//
-// Custom
-@import "custom/_custom.scss";
-@import "streamfields/_streamfields.scss";
-@import "vendor/_vendor.scss";
+
+// 3. Custom components & style.
+@import "custom/custom";
+@import "streamfields/streamfields";
+@import "vendor/vendor";
+
+
+// 4. Utilities & helper classes.
+@import "utilities/a11y";
+
+
+// Shamefile. Throw quick fixes/hacks here for later refactoring.
+@import "shame";
+

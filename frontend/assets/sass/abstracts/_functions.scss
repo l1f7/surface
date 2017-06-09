@@ -1,0 +1,39 @@
+//
+// Custom helper functions.
+//
+
+//
+// Strip units from values.
+//
+// @access  private
+// @param   {str}   $unit - A value with a unit
+// @return  {int}
+// @example
+//     _strip-units(10px);
+//
+@function _strip-units($unit) {
+  @return $unit / ($unit * 0 + 1);
+}
+
+
+
+
+//
+// Convert pixels to rems.
+//
+// @access Public
+// @param  {Integer} $px - Pixel value to convert to rem.
+//
+@function rem($px) {
+  $base: $base-size;
+
+  @if not unitless($px) {
+    $px: _strip-units($px);
+  }
+
+  @if not unitless($base) {
+    $base: _strip-units($base);
+  }
+
+  @return ($px / $base) * 1rem;
+}

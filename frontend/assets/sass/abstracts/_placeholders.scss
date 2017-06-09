@@ -1,0 +1,39 @@
+//
+// Placeholder classes.
+//
+// @extend with caution.
+//
+
+//
+// Micro clearfix.
+//
+// Extend the clearfix class with Sass to avoid the `.cf` class appearing over
+// and over in your markup.
+//
+// @link http://css-101.org/articles/clearfix/latest-new-clearfix-so-far.php
+//
+%cf {
+  &::after {
+    display: table;
+    clear: both;
+    content: "";
+  }
+}
+
+
+
+
+//
+// Text meant only for screen readers.
+//
+// @link http://h5bp.com/v
+//
+%visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  border: 0;
+}

@@ -1,10 +1,10 @@
-// Fluid Type
-// ---------------------
+//
+// Custom mixins.
+//
 
-@function strip-unit($value) {
-  @return $value / ($value * 0 + 1);
-}
-
+//
+// Fluid type sizing.
+//
 @mixin fluid-type($properties, $min-vw, $max-vw, $min-value, $max-value) {
   @each $property in $properties {
     #{$property}: $min-value;
@@ -12,7 +12,7 @@
 
   @media screen and (min-width: $min-vw) {
     @each $property in $properties {
-      #{$property}: calc(#{$min-value} + #{strip-unit($max-value - $min-value)} * (100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)});
+      #{$property}: calc(#{$min-value} + #{_strip-units($max-value - $min-value)} * (100vw - #{$min-vw}) / #{_strip-units($max-vw - $min-vw)});
     }
   }
 
@@ -24,9 +24,14 @@
 }
 
 
-// Make text-blocks create long, non-breaking strings as
-// ellipsis overflow instead of breaking the layout
 
+
+//
+// Truncate text.
+//
+// Make text-blocks create long, non-breaking strings as
+// ellipsis overflow instead of breaking the layout.
+//
 @mixin ellipsis {
   overflow: hidden;
   text-overflow: ellipsis;
