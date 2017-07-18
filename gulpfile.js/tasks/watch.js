@@ -19,7 +19,7 @@ const preWatchTasks = [
 
 
 if (config.proto) {
-  preWatchTasks.push('pug');
+  preWatchTasks.push('build-pug');
 }
 
 gulp.task('watch', preWatchTasks, () => {

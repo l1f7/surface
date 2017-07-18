@@ -14,7 +14,7 @@ const path = require('path');
 const config = require('../config');
 
 
-gulp.task('pug', () =>
+gulp.task('build-pug', () => {
   gulp
     .src(path.join(config.source.pug, '**', '*.pug'))
     .pipe($.pug({ pretty: true }))
@@ -23,4 +23,17 @@ gulp.task('pug', () =>
       bs.notify(`<pre style="text-align:left">${err.message}</pre>`, 10000);
       this.emit('end');
     })
-    .pipe(gulp.dest(config.build.pug)));
+    .pipe(gulp.dest(config.build.pug));
+});
+
+/**
+ * Build the pug templates and callback to BrowserSync to reload when finished.
+ *
+ * Once gulp4 is available this can be cleaned up.
+ */
+gulp.task('pug', ['build-pug'], (done) => {
+  setTimeout(() => {
+    bs.reload();
+    done();
+  }, 100);
+});
