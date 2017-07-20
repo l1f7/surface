@@ -23,9 +23,9 @@
     "lock": "npm run lint:versions -s && npm shrinkwrap --dev && sed -i '' 's/https:/http:/g' npm-shrinkwrap.json"
   },
   "dependencies": {
-    "jquery": "^2.2.4",
-    "uikit": "3.0.0-beta.23",
-    "throttle-debounce": "^1.0.1"
+    "jquery": "2.2.4",
+    "uikit": "3.0.0-beta.27",
+    "throttle-debounce": "1.0.1"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.1",

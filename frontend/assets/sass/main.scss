@@ -9,22 +9,26 @@
 @import "abstracts/placeholders";
 @import "abstracts/vars.color";
 @import "abstracts/vars.type";
-@import "abstracts/vars.uikit";
 
 
-// 2. Vendor & plugin styles.
-@import "uikit/src/scss/variables-theme.scss";
-@import "uikit/src/scss/mixins-theme.scss";
-@import "uikit/src/scss/uikit-theme.scss";
+// 2. UIKit Core & Theme.
+@import "theme/variables"; // needs to come before variables-theme
+@import "uikit/src/scss/variables-theme";
+@import "uikit/src/scss/mixins-theme";
+@import "theme/mixins"; // needs to come before uikit-theme
+@import "uikit/src/scss/uikit-theme";
 
 
-// 3. Custom components & style.
+// 3. Vendor & plugin styles.
+
+
+// 4. Custom components & style.
 @import "custom/custom";
 @import "streamfields/streamfields";
 @import "vendor/vendor";
 
 
-// 4. Utilities & helper classes.
+// 5. Utilities & helper classes.
 @import "utilities/a11y";
 
 
