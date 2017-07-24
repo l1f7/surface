@@ -10,7 +10,6 @@
   "scripts": {
     "start": "npm run lint:versions -s && cross-env NODE_ENV=development npm run watch -s",
     "start:proto": "npm run lint:versions -s && cross-env NODE_ENV=prototype npm run watch -s",
-    "start:docker": "npm run lint:versions -s && cross-env NODE_ENV=development VIRTUAL_ENV=docker npm run watch -s",
     "linter:eslint": "eslint \"frontend/assets/js/**\"",
     "linter:stylelint": "node_modules/.bin/stylelint \"frontend/assets/sass/**/*.scss\" --syntax scss",
     "lint:scripts": "npm run linter:eslint -s",
