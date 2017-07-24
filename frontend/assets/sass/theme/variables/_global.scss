@@ -1,9 +1,13 @@
 //
-// Component:       Variables
+// Component:       Global Variables
 // Description:     Defines common values which are used across all components
 //
 // ========================================================================
 
+// Note: We're trying to figure out a better system to handle all the
+// global uikit variables but for now, try to include only those that you need.
+// If you do change one, make it a habit of removing the `!default` flag so we
+// know for sure that it's been modified.
 
 // Breakpoints
 // ========================================================================
@@ -115,3 +119,4 @@ $global-control-large-height:                    55px !default;
 //
 
 $global-z-index:                                 1000 !default;
+
