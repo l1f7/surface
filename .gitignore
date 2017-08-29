@@ -54,15 +54,22 @@ celerybeat-schedule
 tags
 sources/
 
-## SPHINX DOCS
-build
-
 ## LOGS & DATABASES
 *.log
 *.sql
 *.sqlite
 *.db
 
+## COVERAGE
+htmlcov/
+.coverage
+website/.cache/
+
 
 # DOCKER ==============================================================
-build/frontend/src
+build/backend/requirements
+build/environment/
+build/frontend/package.json
+build/frontend/npm-shrinkwrap.json
+build/frontend/.bowerrc
+build/frontend/bower.json
