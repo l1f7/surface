@@ -1,19 +1,21 @@
 include _mixins/_forms
 include _mixins/_elements
-include _includes/_head
 
-body.l-body
-  <!--[if lt IE 9]><p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p><![endif]-->
 
-  .uk-offcanvas-content
-    include _includes/_site_header
+doctype html
+html.no-js(lang="en")
+  include _includes/_head
 
-    block content
+  body.l-body
+    <!--[if lte IE 9]><p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p><![endif]-->
 
-    include _includes/_site_footer
+    .uk-offcanvas-content
+      include _includes/_site_header
 
-  include _includes/_scripts
+      block content
 
-  block scripts
+      include _includes/_site_footer
 
-</html>
+    include _includes/_scripts
+
+    block scripts
