@@ -8,18 +8,23 @@
     "url": "https://github.com/l1f7/surface"
   },
   "scripts": {
-    "start": "npm run lint:versions -s && cross-env NODE_ENV=development npm run watch -s",
-    "start:proto": "npm run lint:versions -s && cross-env NODE_ENV=prototype npm run watch -s",
+    "start":
+      "npm run lint:versions -s && cross-env NODE_ENV=development npm run watch -s",
+    "start:proto":
+      "npm run lint:versions -s && cross-env NODE_ENV=prototype npm run watch -s",
     "linter:eslint": "eslint \"frontend/assets/js/**\"",
-    "linter:stylelint": "node_modules/.bin/stylelint \"frontend/assets/sass/**/*.scss\" --syntax scss",
+    "linter:stylelint":
+      "node_modules/.bin/stylelint \"frontend/assets/sass/**/*.scss\" --syntax scss",
     "lint:scripts": "npm run linter:eslint -s",
     "lint:styles": "npm run linter:stylelint -s",
-    "lint:versions": "NVM_VERSION=$(cat .nvmrc); NODE_VERSION=$(node --version); echo $NODE_VERSION | grep -q $NVM_VERSION && echo \"\t✓ running node $NODE_VERSION - all clear\n\" || (echo \"\t✗ running node $NODE_VERSION - expected $NVM_VERSION. Use nvm to install the right version.\n\" && exit 1)",
+    "lint:versions":
+      "NVM_VERSION=$(cat .nvmrc); NODE_VERSION=$(node --version); echo $NODE_VERSION | grep -q $NVM_VERSION && echo \"\t✓ running node $NODE_VERSION - all clear\n\" || (echo \"\t✗ running node $NODE_VERSION - expected $NVM_VERSION. Use nvm to install the right version.\n\" && exit 1)",
     "build": "cross-env NODE_ENV=development gulp build",
     "build:proto": "cross-env NODE_ENV=prototype gulp build",
     "build:prod": "cross-env NODE_ENV=production gulp build",
     "watch": "gulp watch",
-    "lock": "npm run lint:versions -s && npm shrinkwrap --dev && sed -i '' 's/https:/http:/g' npm-shrinkwrap.json"
+    "lock":
+      "npm run lint:versions -s && npm shrinkwrap --dev && sed -i '' 's/https:/http:/g' npm-shrinkwrap.json"
   },
   "dependencies": {
     "jquery": "2.2.4",
@@ -31,7 +36,7 @@
     "babel-core": "^6.24.1",
     "babel-eslint": "^7.2.3",
     "babel-loader": "^7.0.0",
-    "babel-preset-latest": "^6.24.1",
+    "babel-preset-env": "^1.6.0",
     "browser-sync": "^2.18.12",
     "cross-env": "^5.0.0",
     "csswring": "^6.0.0",
