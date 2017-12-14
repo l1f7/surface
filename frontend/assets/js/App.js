@@ -70,9 +70,9 @@ import initAjaxForms from './base/ajaxForms';
      *     <div class=".l-body" data-model="home" data-action="init">
      */
     init() {
-  ┊ ┊ const sitewrap = document.querySelector('.l-body');
-  ┊ ┊ const model = sitewrap.getAttribute('data-model');
-  ┊ ┊ const action = sitewrap.getAttribute('data-action');
+      const sitewrap = document.querySelector('.l-body');
+      const model = sitewrap.getAttribute('data-model');
+      const action = sitewrap.getAttribute('data-action');
 
       // Calls LIFT.common.init()
       UTIL.exec('common');
