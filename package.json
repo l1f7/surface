@@ -22,11 +22,12 @@
     "build": "cross-env NODE_ENV=development gulp build",
     "build:proto": "cross-env NODE_ENV=prototype gulp build",
     "build:prod": "cross-env NODE_ENV=production gulp build",
+    "build:root": "cp -R \"frontend/assets/root\" \"website/{{ cookiecutter.short_name }}/static/\"",
     "watch": "gulp watch"
   },
   "dependencies": {
     "jquery": "2.2.4",
-    "uikit": "3.0.0-beta.27",
+    "uikit": "3.0.0-beta.35",
     "throttle-debounce": "1.0.1"
   },
   "devDependencies": {
