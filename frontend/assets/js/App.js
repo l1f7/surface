@@ -70,9 +70,9 @@ import initAjaxForms from './base/ajaxForms';
      *     <div class=".l-body" data-model="home" data-action="init">
      */
     init() {
-      const $sitewrap = $('.l-body');
-      const model = $sitewrap.data('model');
-      const action = $sitewrap.data('action');
+  ┊ ┊ const sitewrap = document.querySelector('.l-body');
+  ┊ ┊ const model = sitewrap.getAttribute('data-model');
+  ┊ ┊ const action = sitewrap.getAttribute('data-action');
 
       // Calls LIFT.common.init()
       UTIL.exec('common');
@@ -87,5 +87,12 @@ import initAjaxForms from './base/ajaxForms';
   };
 
   /** Lift-off in T-minus DOMReady. */
-  $(document).ready(UTIL.init);
+  // in case the document is already rendered
+  if (document.readyState!='loading') UTIL.init;
+  // modern browsers
+  else if (document.addEventListener) document.addEventListener('DOMContentLoaded', UTIL.init);
+  // IE <= 8
+  else document.attachEvent('onreadystatechange', function(){
+    if (document.readyState=='complete') UTIL.init;
+  });
 })(window, jQuery));
