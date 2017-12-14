@@ -14,7 +14,7 @@
       "npm run lint:versions -s && cross-env NODE_ENV=prototype npm run watch -s",
     "linter:eslint": "eslint \"frontend/assets/js/**\"",
     "linter:stylelint":
-      "node_modules/.bin/stylelint \"frontend/assets/sass/**/*.scss\" --syntax scss",
+      "stylelint \"frontend/assets/sass/**/*.scss\" --syntax scss",
     "lint:scripts": "npm run linter:eslint -s",
     "lint:styles": "npm run linter:stylelint -s",
     "lint:versions":
