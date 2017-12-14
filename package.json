@@ -22,9 +22,7 @@
     "build": "cross-env NODE_ENV=development gulp build",
     "build:proto": "cross-env NODE_ENV=prototype gulp build",
     "build:prod": "cross-env NODE_ENV=production gulp build",
-    "watch": "gulp watch",
-    "lock":
-      "npm run lint:versions -s && npm shrinkwrap --dev && sed -i '' 's/https:/http:/g' npm-shrinkwrap.json"
+    "watch": "gulp watch"
   },
   "dependencies": {
     "jquery": "2.2.4",
