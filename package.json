@@ -59,6 +59,6 @@
     "stylelint-config-recess-order": "^1.2.3",
     "stylelint-order": "^0.8.0",
     "stylelint-scss": "^2.2.0",
-    "webpack": "^2.7.0"
+    "webpack": "^3.10.0"
   }
 }
