@@ -18,6 +18,7 @@ const sitePath = path.join('.', 'website', '{{ cookiecutter.short_name }}', 'sta
 const distPath = proto ? protoPath : sitePath;
 const proxyServer = docker ? 'backend:8000' : 'localhost:8000';
 
+const $ = require('gulp-load-plugins')();
 
 module.exports = {
   proto,
@@ -69,10 +70,10 @@ module.exports = {
       preserveHacks: true,
     },
 
-    imagemin: {
-      progressive: true,
-      interlaced: true,
-    },
+    imagemin: [
+      $.imagemin.gifsicle({ interlaced: true }),
+      $.imagemin.jpegtran({ progressive: true }),
+    ],
 
     sass: {
       indentedSyntax: false,
