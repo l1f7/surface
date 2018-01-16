@@ -1,0 +1,153 @@
+// Name:            Base
+// Description:     Default values for HTML elements
+//
+// Component:       `uk-link`
+//                  `uk-h1`, `uk-h2`, `uk-h3`, `uk-h4`, `uk-h5`, `uk-h6`
+//                  `uk-hr`
+//
+// ========================================================================
+
+@mixin hook-base-body(){
+  font-variant-ligatures: none;
+  -webkit-font-variant-ligatures: none;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+  text-shadow: rgba(0, 0, 0, .01) 0 0 1px;
+  font-size: $lf--global-font-size;
+  line-height: $lf--global-line-height;
+  
+  @media (min-width: $breakpoint-medium) {
+    font-size: $lf--global-font-size-m;
+    line-height: $lf--global-line-height-m;
+  }
+
+  @media (min-width: $breakpoint-large) {
+    font-size: $lf--global-font-size-l;
+    line-height: $lf--global-line-height-l;
+  }
+}
+
+// @mixin hook-base-link(){}
+// @mixin hook-base-link-hover(){}
+// @mixin hook-base-code(){}
+
+@mixin hook-base-heading(){
+    color: $lf--global-heading-color;
+    font-family: $lf--heading-font-family;
+}
+
+@mixin hook-base-h1(){
+  font-size: $lf--base-h1-font-size;
+  line-height: $lf--base-h1-line-height;
+
+  @media (min-width: $breakpoint-medium) {
+    font-size: $lf--base-h1-font-size-m;
+    line-height: $lf--base-h1-line-height-m;
+  }
+
+  @media (min-width: $breakpoint-large) {
+    font-size: $lf--base-h1-font-size-l;
+    line-height: $lf--base-h1-line-height-l;
+  }
+}
+
+@mixin hook-base-h2(){
+  font-size: $lf--base-h2-font-size;
+  line-height: $lf--base-h2-line-height;
+
+  @media (min-width: $breakpoint-medium) {
+    font-size: $lf--base-h2-font-size-m;
+    line-height: $lf--base-h2-line-height-m;
+  }
+
+  @media (min-width: $breakpoint-large) {
+    font-size: $lf--base-h2-font-size-l;
+    line-height: $lf--base-h2-line-height-l;
+  }
+}
+
+@mixin hook-base-h3(){
+  font-size: $lf--base-h3-font-size;
+  line-height: $lf--base-h3-line-height;
+
+  @media (min-width: $breakpoint-medium) {
+    font-size: $lf--base-h3-font-size-m;
+    line-height: $lf--base-h3-line-height-m;
+  }
+
+  @media (min-width: $breakpoint-large) {
+    font-size: $lf--base-h3-font-size-l;
+    line-height: $lf--base-h3-line-height-l;
+  }
+}
+
+@mixin hook-base-h4(){
+  font-size: $lf--base-h4-font-size;
+  line-height: $lf--base-h4-line-height;
+
+  @media (min-width: $breakpoint-medium) {
+    font-size: $lf--base-h4-font-size-m;
+    line-height: $lf--base-h4-line-height-m;
+  }
+
+  @media (min-width: $breakpoint-large) {
+    font-size: $lf--base-h4-font-size-l;
+    line-height: $lf--base-h4-line-height-l;
+  }
+}
+
+@mixin hook-base-h5(){
+  font-size: $lf--base-h5-font-size;
+  line-height: $lf--base-h5-line-height;
+
+  @media (min-width: $breakpoint-medium) {
+    font-size: $lf--base-h5-font-size-m;
+    line-height: $lf--base-h5-line-height-m;
+  }
+
+  @media (min-width: $breakpoint-large) {
+    font-size: $lf--base-h5-font-size-l;
+    line-height: $lf--base-h5-line-height-l;
+  }
+}
+
+@mixin hook-base-h6(){
+  font-size: $lf--base-h6-font-size;
+  line-height: $lf--base-h6-line-height;
+
+  @media (min-width: $breakpoint-medium) {
+    font-size: $lf--base-h6-font-size-m;
+    line-height: $lf--base-h6-line-height-m;
+  }
+
+  @media (min-width: $breakpoint-large) {
+    font-size: $lf--base-h6-font-size-l;
+    line-height: $lf--base-h6-line-height-l;
+  }
+}
+
+// @mixin hook-base-hr(){}
+// @mixin hook-base-blockquote(){}
+// @mixin hook-base-blockquote-footer(){}
+// @mixin hook-base-pre(){}
+// @mixin hook-base-misc(){}
+
+
+// Inverse
+// ========================================================================
+
+// @mixin hook-inverse-base-link(){}
+// @mixin hook-inverse-base-link-hover(){}
+// @mixin hook-inverse-base-code(){}
+// @mixin hook-inverse-base-heading(){}
+// @mixin hook-inverse-base-h1(){}
+// @mixin hook-inverse-base-h2(){}
+// @mixin hook-inverse-base-h3(){}
+// @mixin hook-inverse-base-h4(){}
+// @mixin hook-inverse-base-h5(){}
+// @mixin hook-inverse-base-h6(){}
+// @mixin hook-inverse-base-blockquote(){}
+// @mixin hook-inverse-base-blockquote-footer(){}
+// @mixin hook-inverse-base-hr(){}

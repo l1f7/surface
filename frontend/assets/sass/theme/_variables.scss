@@ -8,6 +8,94 @@
 //
 // ========================================================================
 
-@import "variables/global"; // to override the giant uikit variables file
-// @import "variables/base"; // see for component example
 
+// Base
+@import "variables/global.scss";
+@import "variables/inverse.scss";
+@import "variables/mixin.scss";
+@import "variables/base.scss";
+
+// Elements
+@import "variables/link.scss";
+@import "variables/heading.scss";
+@import "variables/divider.scss";
+@import "variables/list.scss";
+@import "variables/description-list.scss";
+@import "variables/table.scss";
+@import "variables/icon.scss";
+@import "variables/form-range.scss";
+@import "variables/form.scss"; // After: Icon, Form Range
+@import "variables/button.scss";
+
+// Layout
+@import "variables/section.scss";
+@import "variables/container.scss";
+@import "variables/grid.scss";
+@import "variables/tile.scss";
+@import "variables/card.scss";
+
+// Common
+@import "variables/close.scss"; // After: Icon
+@import "variables/spinner.scss"; // After: Icon
+@import "variables/totop.scss"; // After: Icon
+@import "variables/marker.scss"; // After: Icon
+@import "variables/alert.scss"; // After: Close
+@import "variables/badge.scss";
+@import "variables/label.scss";
+@import "variables/overlay.scss"; // After: Icon
+@import "variables/article.scss"; // After: Subnav
+@import "variables/comment.scss"; // After: Subnav
+@import "variables/search.scss"; // After: Icon
+
+// Navs
+@import "variables/nav.scss";
+@import "variables/navbar.scss"; // After: Card, Grid, Nav, Icon, Search
+@import "variables/subnav.scss";
+@import "variables/breadcrumb.scss";
+@import "variables/pagination.scss";
+@import "variables/tab.scss";
+@import "variables/slidenav.scss"; // After: Icon
+@import "variables/dotnav.scss";
+@import "variables/thumbnav.scss";
+
+// JavaScript
+@import "variables/accordion.scss";
+@import "variables/drop.scss"; // After: Card
+@import "variables/dropdown.scss"; // After: Card
+@import "variables/modal.scss"; // After: Close
+@import "variables/lightbox.scss"; // After: Close
+@import "variables/slideshow.scss";
+@import "variables/sticky.scss";
+@import "variables/offcanvas.scss";
+@import "variables/switcher.scss";
+// Scrollspy
+// Toggle
+// Scroll
+
+// Additional
+@import "variables/iconnav.scss";
+@import "variables/notification.scss";
+@import "variables/tooltip.scss";
+@import "variables/placeholder.scss";
+@import "variables/progress.scss";
+@import "variables/sortable.scss";
+@import "variables/countdown.scss";
+
+// Utilities
+@import "variables/animation.scss";
+@import "variables/width.scss";
+@import "variables/text.scss";
+@import "variables/column.scss";
+@import "variables/cover.scss";
+@import "variables/background.scss";
+@import "variables/align.scss";
+@import "variables/utility.scss";
+@import "variables/flex.scss"; // After: Utility
+@import "variables/margin.scss";
+@import "variables/padding.scss";
+@import "variables/position.scss";
+@import "variables/transition.scss";
+@import "variables/visibility.scss";
+
+// Need to be loaded last
+@import "variables/print.scss";

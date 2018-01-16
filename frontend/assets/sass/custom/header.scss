@@ -1,0 +1,45 @@
+.lf-header {
+  z-index: 100;
+
+  .uk-header {
+    // transition: $transition-duration;
+  }
+
+  // .uk-header-container.uk-active {
+  //   background: $c-white;
+  //   box-shadow: 0 5px 10px rgba($c-black, 0.05);
+  // }
+
+  .uk-header-item {
+    // height: auto;
+  }
+
+  .lf-header-leftonxs {
+    @media (max-width: $breakpoint-xsmall-max) {
+      position: static;
+      top: 0;
+      left: 0;
+      transform: none;
+      margin-left: 15px;
+    }
+  }
+}
+
+.lf-header-top {
+  // border-bottom: 1px solid rgba($c-smoke, 0.15);
+  p {
+    font-size: 14px;
+  }
+  
+  .uk-subnav > * > :first-child {
+    font-size: 14px;
+  }
+}
+
+.lf-header-util {
+  padding-top: 10px;
+
+  &.uk-header-item {
+    height: auto;
+  }
+}

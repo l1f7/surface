@@ -1,0 +1,96 @@
+//
+// Some quick win settings.
+//
+
+//
+// Type Colors
+//
+
+$lf--global-heading-color:            color(ink);
+$lf--global-emphasis-color:           color(ink, light);
+$lf--global-color:                    color(ink, lighter);
+$lf--global-muted-color:              color(ink, lightest);
+
+$lf--global-link-color:               color(blue);
+$lf--global-link-hover-color:         color(blue, dark);
+
+$lf--global-inverse-color:            color(white);
+
+
+//
+// Type Fonts
+//
+
+$lf--global-font-family:              $fontstack-system;
+$lf--heading-font-family:             $fontstack-system;
+
+
+//
+// Type Sizing
+//
+
+// Mobile
+$lf--global-font-size:                16px;
+$lf--global-line-height:              1.6;
+
+$lf--base-h1-font-size:               32px;
+$lf--base-h1-line-height:             1.2;
+
+$lf--base-h2-font-size:               24px;
+$lf--base-h2-line-height:             1.3;
+
+$lf--base-h3-font-size:               20px;
+$lf--base-h3-line-height:             1.4;
+
+$lf--base-h4-font-size:               18px;
+$lf--base-h4-line-height:             1.4;
+
+$lf--base-h5-font-size:               16px;
+$lf--base-h5-line-height:             1.4;
+
+$lf--base-h6-font-size:               16px;
+$lf--base-h6-line-height:             1.4;
+
+// Tablet
+$lf--global-font-size-m:              17px;
+$lf--global-line-height-m:            1.6;
+
+$lf--base-h1-font-size-m:             40px;
+$lf--base-h1-line-height-m:           1.2;
+
+$lf--base-h2-font-size-m:             28px;
+$lf--base-h2-line-height-m:           1.3;
+
+$lf--base-h3-font-size-m:             24px;
+$lf--base-h3-line-height-m:           1.4;
+
+$lf--base-h4-font-size-m:             22px;
+$lf--base-h4-line-height-m:           1.4;
+
+$lf--base-h5-font-size-m:             20px;
+$lf--base-h5-line-height-m:           1.4;
+
+$lf--base-h6-font-size-m:             20px;
+$lf--base-h6-line-height-m:           1.4;
+
+// Desktop
+$lf--global-font-size-l:              18px;
+$lf--global-line-height-l:            1.6;
+
+$lf--base-h1-font-size-l:             48px;
+$lf--base-h1-line-height-l:           1.2;
+
+$lf--base-h2-font-size-l:             34px;
+$lf--base-h2-line-height-l:           1.3;
+
+$lf--base-h3-font-size-l:             28px;
+$lf--base-h3-line-height-l:           1.4;
+
+$lf--base-h4-font-size-l:             24px;
+$lf--base-h4-line-height-l:           1.4;
+
+$lf--base-h5-font-size-l:             20px;
+$lf--base-h5-line-height-l:           1.4;
+
+$lf--base-h6-font-size-l:             20px;
+$lf--base-h6-line-height-l:           1.4;

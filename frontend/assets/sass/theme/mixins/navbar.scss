@@ -1,0 +1,70 @@
+// Name:            Navbar
+// Description:     Component to create horizontal navigation bars
+//
+// Component:       `uk-navbar`
+//
+// Sub-objects:     `uk-navbar-container`
+//                  `uk-navbar-left`
+//                  `uk-navbar-right`
+//                  `uk-navbar-center`
+//                  `uk-navbar-center-left`
+//                  `uk-navbar-center-right`
+//                  `uk-navbar-nav`
+//                  `uk-navbar-item`
+//                  `uk-navbar-toggle`
+//                  `uk-navbar-subtitle`
+//                  `uk-navbar-dropbar`
+//
+// Adopted:         `uk-navbar-dropdown` + Modifiers
+//                  `uk-navbar-dropdown-nav`
+//                  `uk-navbar-dropdown-grid`
+//                  `uk-navbar-toggle-icon`
+//
+// Modifiers:       `uk-navbar-transparent`
+//                  `uk-navbar-sticky`
+//                  `uk-navbar-dropdown-stack`
+//
+// States:          `uk-active`
+//                  `uk-parent`
+//                  `uk-open`
+//
+//
+// ========================================================================
+
+// @mixin hook-navbar(){}
+// @mixin hook-navbar-container(){}
+// @mixin hook-navbar-nav-item(){}
+// @mixin hook-navbar-nav-item-hover(){}
+// @mixin hook-navbar-nav-item-onclick(){}
+// @mixin hook-navbar-nav-item-active(){}
+// @mixin hook-navbar-item(){}
+// @mixin hook-navbar-toggle(){}
+// @mixin hook-navbar-toggle-hover(){}
+// @mixin hook-navbar-toggle-icon(){}
+// @mixin hook-navbar-toggle-icon-hover(){}
+// @mixin hook-navbar-subtitle(){}
+// @mixin hook-navbar-transparent(){}
+// @mixin hook-navbar-sticky(){}
+// @mixin hook-navbar-dropdown(){}
+// @mixin hook-navbar-dropdown-dropbar(){}
+// @mixin hook-navbar-dropdown-nav(){}
+// @mixin hook-navbar-dropdown-nav-item(){}
+// @mixin hook-navbar-dropdown-nav-item-hover(){}
+// @mixin hook-navbar-dropdown-nav-item-active(){}
+// @mixin hook-navbar-dropdown-nav-header(){}
+// @mixin hook-navbar-dropdown-nav-divider(){}
+// @mixin hook-navbar-dropbar(){}
+// @mixin hook-navbar-dropbar-slide(){}
+// @mixin hook-navbar-misc(){}
+
+
+// Inverse
+// ========================================================================
+
+// @mixin hook-inverse-navbar-nav-item(){}
+// @mixin hook-inverse-navbar-nav-item-hover(){}
+// @mixin hook-inverse-navbar-nav-item-onclick(){}
+// @mixin hook-inverse-navbar-nav-item-active(){}
+// @mixin hook-inverse-navbar-item(){}
+// @mixin hook-inverse-navbar-toggle(){}
+// @mixin hook-inverse-navbar-toggle-hover(){}

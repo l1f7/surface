@@ -9,6 +9,7 @@
 @import "abstracts/placeholders";
 @import "abstracts/vars.color";
 @import "abstracts/vars.type";
+@import "abstracts/vars.theme";
 
 
 // 2. UIKit Core & Theme.
@@ -20,12 +21,12 @@
 
 
 // 3. Vendor & plugin styles.
+@import "vendor/vendor";
 
 
 // 4. Custom components & style.
 @import "custom/custom";
 @import "streamfields/streamfields";
-@import "vendor/vendor";
 
 
 // 5. Utilities & helper classes.

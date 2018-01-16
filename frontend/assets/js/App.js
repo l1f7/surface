@@ -3,10 +3,15 @@ import jQuery from 'jquery';
 import UIkit from 'uikit';
 import Icons from 'uikit/dist/js/uikit-icons';
 
+import ScrollMagic from 'scrollmagic';
+import slick from 'slick-carousel'
+import flowplayer from "flowplayer";
+
 import initGreeting from './base/hello';
 import initCSRFToken from './base/csrf';
 import initAjaxForms from './base/ajaxForms';
-// import initProgressiveImages from './base/progressiveImages';
+
+import initVideo from './modules/video';
 
 ((function App(window, $) {
   const LIFT = {
@@ -28,7 +33,9 @@ import initAjaxForms from './base/ajaxForms';
         initGreeting();
         initCSRFToken(); // Needed for Ajax
         initAjaxForms(); // Needed for Ajax'd Snippetforms
-        // initProgressiveImages();
+        
+        initBanner();
+        initVideo();
 
         /**
          * UIkit
@@ -39,10 +46,86 @@ import initAjaxForms from './base/ajaxForms';
         // components can be called from the imported UIkit reference
         // UIkit.notification('Test for UiKit');
 
+        /**
+         * Scroll List
+         */
+        var controller = null;
 
-        // This is used to trigger the first render of our progressive image setup
-        // and should remain last inside this block. see: ./base/progressiveImages.js
-        // $(window).trigger('el.init');
+        function initializeSlick(){
+          $('.lf-scrolllist-slick').slick({
+            dots: true,
+            infinite: true,
+            speed: 300,
+            slidesToShow: 1,
+            adaptiveHeight: true
+          });
+        }
+
+        function initializeScrollMagic() {
+          $('body').scrollTop(0);
+
+          controller = new ScrollMagic.Controller();
+
+          $('.lf-scrolllist').each(function(){
+            var imageScene = new ScrollMagic.Scene({
+                triggerElement: this, duration: $(this).height() - $(this).find('.lf-scrolllist-image').outerHeight()
+              })
+              .triggerHook(0)
+              .setPin($(this).find('.lf-scrolllist-imageContainer')[0])
+              .addTo(controller);
+          });
+
+          // create scene for every slide
+          $('.lf-scrolllist-slide').each(function(){
+            var image = $(this).data('imagecontainer');
+            var slideScene = new ScrollMagic.Scene({
+                triggerElement: this, duration: $(this).outerHeight()
+              })
+              .triggerHook(0.5)
+              .on('enter leave', function (e) {
+                var photoIndex = $(e.target.triggerElement()).index();
+                var scrollList = $(e.target.triggerElement()).parents('.lf-scrolllist');
+                $(scrollList).find('.lf-scrolllist-img').eq(photoIndex).removeClass('is-inside is-outside')
+                $(scrollList).find('.lf-scrolllist-img').eq(photoIndex).addClass('is-' + (e.type == 'enter' ? 'inside' : 'outside'))
+              })
+              .on('start end', function (e) {
+                var photoIndex = $(e.target.triggerElement()).index();
+                var scrollList = $(e.target.triggerElement()).parents('.lf-scrolllist');
+                $(scrollList).find('.lf-scrolllist-img').eq(photoIndex).removeClass('is-top is-bottom')
+                $(scrollList).find('.lf-scrolllist-img').eq(photoIndex).addClass('is-' + (e.type == 'start' ? 'top' : 'bottom'))
+              })
+              .addTo(controller);
+          });
+        }
+
+        function destroySlick(){
+          $('.lf-scrolllist-slick').slick('unslick');
+        }
+
+        function destroyScrollMagic(){
+          if (controller) {
+            console.log('controller', controller);
+            controller = controller.destroy(true);
+
+            $('.scrollmagic-pin-spacer').contents().unwrap();
+            $('.lf-scrolllist-imageContainer').attr('style', '');
+          }
+        }
+
+        function mediaSize() {          
+          if( window.matchMedia('(min-width: 640px)').matches ) {
+            if ( !controller ) {
+              initializeScrollMagic()
+            }
+          } else {
+            destroyScrollMagic();
+            initializeSlick();
+          }
+        }
+
+        mediaSize();
+
+        window.addEventListener('resize', mediaSize, false);
       },
     },
   };
@@ -67,12 +150,12 @@ import initAjaxForms from './base/ajaxForms';
      * Gets the view and action (if defined) from the main DOM container.
      *
      * @example
-     *     <div class=".l-body" data-model="home" data-action="init">
+     *     <div class='.l-body' data-model='home' data-action='init'>
      */
     init() {
-      const sitewrap = document.querySelector('.l-body');
-      const model = sitewrap.getAttribute('data-model');
-      const action = sitewrap.getAttribute('data-action');
+      const $sitewrap = $('.l-body');
+      const model = $sitewrap.data('model');
+      const action = $sitewrap.data('action');
 
       // Calls LIFT.common.init()
       UTIL.exec('common');
@@ -87,12 +170,5 @@ import initAjaxForms from './base/ajaxForms';
   };
 
   /** Lift-off in T-minus DOMReady. */
-  // in case the document is already rendered
-  if (document.readyState!='loading') UTIL.init;
-  // modern browsers
-  else if (document.addEventListener) document.addEventListener('DOMContentLoaded', UTIL.init);
-  // IE <= 8
-  else document.attachEvent('onreadystatechange', function(){
-    if (document.readyState=='complete') UTIL.init;
-  });
+  $(document).ready(UTIL.init);
 })(window, jQuery));

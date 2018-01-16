@@ -1,0 +1,42 @@
+// Name:            Lightbox
+// Description:     Component to create an lightbox image gallery
+//
+// Component:       `uk-lightbox`
+//
+// Sub-objects:     `uk-lightbox-page`
+//                  `uk-lightbox-items`
+//                  `uk-lightbox-toolbar`
+//                  `uk-lightbox-toolbar-icon`
+//                  `uk-lightbox-button`
+//                  `uk-lightbox-caption`
+//                  `uk-lightbox-iframe`
+//
+// States:          `uk-open`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+$lightbox-z-index:                               $global-z-index + 10 !default;
+$lightbox-background:                            #000 !default;
+
+$lightbox-item-color:                            rgba(255,255,255,0.7) !default;
+
+$lightbox-toolbar-padding-vertical:              10px !default;
+$lightbox-toolbar-padding-horizontal:            10px !default;
+$lightbox-toolbar-background:                    rgba(0,0,0,0.3) !default;
+$lightbox-toolbar-color:                         rgba(255,255,255,0.7) !default;
+
+$lightbox-toolbar-icon-padding:                  5px !default;
+$lightbox-toolbar-icon-color:                    rgba(255,255,255,0.7) !default;
+
+$lightbox-toolbar-icon-hover-color:              #fff !default;
+
+$lightbox-button-size:                           50px !default;
+$lightbox-button-background:                     $lightbox-toolbar-background !default;
+$lightbox-button-color:                          rgba(255,255,255,0.7) !default;
+
+$lightbox-button-hover-color:                    #fff !default;
+

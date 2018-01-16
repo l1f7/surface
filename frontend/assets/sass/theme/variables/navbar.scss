@@ -1,0 +1,91 @@
+// Name:            Navbar
+// Description:     Component to create horizontal navigation bars
+//
+// Component:       `uk-navbar`
+//
+// Sub-objects:     `uk-navbar-container`
+//                  `uk-navbar-left`
+//                  `uk-navbar-right`
+//                  `uk-navbar-center`
+//                  `uk-navbar-center-left`
+//                  `uk-navbar-center-right`
+//                  `uk-navbar-nav`
+//                  `uk-navbar-item`
+//                  `uk-navbar-toggle`
+//                  `uk-navbar-subtitle`
+//                  `uk-navbar-dropbar`
+//
+// Adopted:         `uk-navbar-dropdown` + Modifiers
+//                  `uk-navbar-dropdown-nav`
+//                  `uk-navbar-dropdown-grid`
+//                  `uk-navbar-toggle-icon`
+//
+// Modifiers:       `uk-navbar-transparent`
+//                  `uk-navbar-sticky`
+//                  `uk-navbar-dropdown-stack`
+//
+// States:          `uk-active`
+//                  `uk-parent`
+//                  `uk-open`
+//
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+$navbar-background:                              color(white);
+$navbar-color-mode:                              none !default;
+
+$navbar-nav-item-height:                         80px !default;
+$navbar-nav-item-padding-horizontal:             15px !default;
+$navbar-nav-item-color:                          $global-muted-color !default;
+$navbar-nav-item-font-size:                      $global-font-size !default;
+$navbar-nav-item-font-family:                    $global-font-family !default;
+$navbar-nav-item-hover-color:                    $global-color !default;
+$navbar-nav-item-onclick-color:                  $global-emphasis-color !default;
+$navbar-nav-item-active-color:                   $global-emphasis-color !default;
+
+$navbar-item-color:                              $global-color !default;
+
+$navbar-toggle-color:                            $global-muted-color !default;
+$navbar-toggle-hover-color:                      $global-color !default;
+
+$navbar-subtitle-font-size:                      $global-small-font-size !default;
+
+$navbar-dropdown-z-index:                        $global-z-index + 20 !default;
+$navbar-dropdown-width:                          200px !default;
+$navbar-dropdown-margin:                         0 !default;
+$navbar-dropdown-padding:                        15px !default;
+$navbar-dropdown-background:                     $global-muted-background !default;
+$navbar-dropdown-color:                          $global-color !default;
+$navbar-dropdown-grid-gutter-horizontal:         $global-gutter !default;
+$navbar-dropdown-grid-gutter-vertical:           $navbar-dropdown-grid-gutter-horizontal !default;
+
+$navbar-dropdown-dropbar-margin-top:             0 !default;
+$navbar-dropdown-dropbar-margin-bottom:          $navbar-dropdown-dropbar-margin-top !default;
+
+$navbar-dropdown-nav-item-color:                 $global-muted-color !default;
+$navbar-dropdown-nav-item-hover-color:           $global-color !default;
+$navbar-dropdown-nav-item-active-color:          $global-emphasis-color !default;
+$navbar-dropdown-nav-header-color:               $global-emphasis-color !default;
+$navbar-dropdown-nav-divider-border-width:       $global-border-width !default;
+$navbar-dropdown-nav-divider-border:             $global-border !default;
+$navbar-dropdown-nav-sublist-item-color:         $global-muted-color !default;
+$navbar-dropdown-nav-sublist-item-hover-color:   $global-color !default;
+
+$navbar-dropbar-background:                      $navbar-dropdown-background !default;
+$navbar-dropbar-z-index:                         $global-z-index + 20 !default;
+
+
+// Inverse
+// ========================================================================
+
+$inverse-navbar-nav-item-color:                 $inverse-global-muted-color !default;
+$inverse-navbar-nav-item-hover-color:           $inverse-global-color !default;
+$inverse-navbar-nav-item-onclick-color:         $inverse-global-emphasis-color !default;
+$inverse-navbar-nav-item-active-color:          $inverse-global-emphasis-color !default;
+$inverse-navbar-item-color:                     $inverse-global-color !default;
+$inverse-navbar-toggle-color:                   $inverse-global-muted-color !default;
+$inverse-navbar-toggle-hover-color:             $inverse-global-color !default;

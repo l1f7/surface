@@ -1,0 +1,64 @@
+.lf-slideshowgrid-grid {
+  width: 100%;
+  display: grid;
+  grid-gap: 15px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto auto;
+  grid-template-areas:
+    "slide1 slide2"
+    "content content"
+    "slide3 slide3";
+  
+  @media (min-width: $breakpoint-medium) {
+    grid-gap: 20px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+      "slide1 content"
+      "slide2 content"
+      "slide3 slide3";
+  }
+
+  @media (min-width: $breakpoint-large) {
+    grid-gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "slide1 content slide3 slide3"
+      "slide2 content slide3 slide3";
+  }
+}
+
+.lf-slideshowgrid-slideshow-1 {
+  grid-area: slide1;
+  position: relative;
+}
+
+.lf-slideshowgrid-slideshow-2 {
+  grid-area: slide2;
+  position: relative;
+}
+
+.lf-slideshowgrid-slideshow-3 {
+  grid-area: slide3;
+  position: relative;
+}
+
+.lf-slideshowgrid-content {
+  grid-area: content;
+}
+
+.lf-slideshowgrid-slideshow {
+  @media (max-width: $breakpoint-medium-max) {
+    position: static !important;
+  }
+}
+
+.lf-slideshowgrid-slideshow-items {
+  position: static !important;
+
+  @media (min-width: $breakpoint-medium) {
+    position: absolute !important;
+    height: 100% !important;
+  }
+}

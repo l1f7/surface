@@ -1,0 +1,22 @@
+.lf-marquee {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+
+  &-container {
+    display: flex;
+    align-items: center;
+    animation: scroll 10s infinite linear;
+
+    &:hover {
+      animation-play-state: paused;
+    }
+  }
+} 
+    
+@keyframes scroll {
+  from { transform: translateX(0%); }
+  to { transform: translateX(-50%); }
+}

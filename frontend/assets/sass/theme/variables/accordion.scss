@@ -1,0 +1,22 @@
+// Name:            Accordion
+// Description:     Component to create accordions
+//
+// Component:       `uk-accordion`
+//
+// Sub-objects:     `uk-accordion-title`
+//                  `uk-accordion-content`
+//
+// States:          `uk-open`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+$accordion-item-margin-top:                     $global-margin !default;
+
+$accordion-title-font-size:                     $global-medium-font-size !default;
+$accordion-title-line-height:                   1.4 !default;
+
+$accordion-content-margin-top:                  $global-margin !default;

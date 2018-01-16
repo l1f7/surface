@@ -1,0 +1,13 @@
+.lf-footer {
+  @extend .uk-margin-medium-top;
+}
+
+.lf-footer--01 {
+  border-top: 1px solid color(sky);
+}
+
+.lf-footer-nav {
+  & > * > :first-child {
+    font-size: 1rem;
+  }
+}

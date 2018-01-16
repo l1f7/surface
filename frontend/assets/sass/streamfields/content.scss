@@ -1,0 +1,31 @@
+.rich-text {
+  > *:first-child {
+    margin-top: 20px;
+  }
+
+  > *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.lf-richtext > * {
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.lf-content-video-container {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56%;
+
+  iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+  }
+}
+

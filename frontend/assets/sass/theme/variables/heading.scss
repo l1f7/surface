@@ -1,0 +1,54 @@
+// Name:            Heading
+// Description:     Styles for headings
+//
+// Component:       `uk-heading-primary`
+//                  `uk-heading-hero`
+//                  `uk-heading-divider`
+//                  `uk-heading-bullet`
+//                  `uk-heading-line`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+$heading-primary-font-size:                      $global-xxlarge-font-size !default;
+$heading-primary-line-height:                    1.2 !default;
+
+$heading-primary-font-size-m:                    3.75rem !default; // 54px
+$heading-primary-line-height-m:                  1.1 !default;
+
+$heading-hero-font-size:                         40px;
+$heading-hero-line-height:                       1.1 !default;
+
+$heading-hero-font-size-s:                       52px;
+$heading-hero-line-height-s:                     1 !default;
+
+$heading-hero-font-size-m:                       64px;
+$heading-hero-line-height-m:                     1 !default;
+
+$heading-divider-padding-bottom:                 10px !default;
+$heading-divider-border-width:                   $global-border-width !default;
+$heading-divider-border:                         $global-border !default;
+
+$heading-bullet-top:                             unquote('calc(-0.1 * 1em)') !default;
+$heading-bullet-height:                          0.9em !default;
+$heading-bullet-margin-right:                    10px !default;
+$heading-bullet-border-width:                    5px !default;
+$heading-bullet-border:                          $global-border !default;
+
+$heading-line-border-width:                      $global-border-width !default;
+$heading-line-border:                            $global-border !default;
+$heading-line-height:                            $heading-line-border-width !default;
+$heading-line-margin-horizontal:                 0.6em !default;
+
+
+
+// Inverse
+// ========================================================================
+
+$inverse-heading-divider-border:                   $inverse-global-border !default;
+$inverse-heading-bullet-border:                    $inverse-global-border !default;
+$inverse-heading-line-border:                      $inverse-global-border !default;
+

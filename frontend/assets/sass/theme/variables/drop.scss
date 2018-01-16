@@ -1,0 +1,25 @@
+// Name:            Drop
+// Description:     Component to position any element next to any other element.
+//
+// Component:       `uk-drop`
+//
+// Modifiers:       `uk-drop-top-*`
+//                  `uk-drop-bottom-*`
+//                  `uk-drop-left-*`
+//                  `uk-drop-right-*`
+//                  `uk-drop-stack`
+//                  `uk-drop-grid`
+//
+// States:          `uk-open`
+//
+// Uses:            Animation
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+$drop-z-index:                               $global-z-index + 20 !default;
+$drop-width:                                 300px !default;
+$drop-margin:                                $global-margin !default;

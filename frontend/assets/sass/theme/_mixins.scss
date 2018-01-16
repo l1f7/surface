@@ -9,5 +9,91 @@
 //
 // ========================================================================
 
-// @import "mixins/base"; // see for component example
+// Base
+@import "mixins/base.scss";
 
+// Elements
+@import "mixins/link.scss";
+@import "mixins/heading.scss";
+@import "mixins/divider.scss";
+@import "mixins/list.scss";
+@import "mixins/description-list.scss";
+@import "mixins/table.scss";
+@import "mixins/icon.scss";
+@import "mixins/form-range.scss";
+@import "mixins/form.scss"; // After: Icon, Form Range
+@import "mixins/button.scss";
+
+// Layout
+@import "mixins/section.scss";
+@import "mixins/container.scss";
+@import "mixins/grid.scss";
+@import "mixins/tile.scss";
+@import "mixins/card.scss";
+
+// Common
+@import "mixins/close.scss"; // After: Icon
+@import "mixins/spinner.scss"; // After: Icon
+@import "mixins/totop.scss"; // After: Icon
+@import "mixins/marker.scss"; // After: Icon
+@import "mixins/alert.scss"; // After: Close
+@import "mixins/badge.scss";
+@import "mixins/label.scss";
+@import "mixins/overlay.scss"; // After: Icon
+@import "mixins/article.scss"; // After: Subnav
+@import "mixins/comment.scss"; // After: Subnav
+@import "mixins/search.scss"; // After: Icon
+
+// Navs
+@import "mixins/nav.scss";
+@import "mixins/navbar.scss"; // After: Card, Grid, Nav, Icon, Search
+@import "mixins/subnav.scss";
+@import "mixins/breadcrumb.scss";
+@import "mixins/pagination.scss";
+@import "mixins/tab.scss";
+@import "mixins/slidenav.scss"; // After: Icon
+@import "mixins/dotnav.scss";
+@import "mixins/thumbnav.scss";
+
+// JavaScript
+@import "mixins/accordion.scss";
+@import "mixins/drop.scss"; // After: Card
+@import "mixins/dropdown.scss"; // After: Card
+@import "mixins/modal.scss"; // After: Close
+@import "mixins/lightbox.scss"; // After: Close
+@import "mixins/slideshow.scss";
+@import "mixins/sticky.scss";
+@import "mixins/offcanvas.scss";
+@import "mixins/switcher.scss";
+// Scrollspy
+// Toggle
+// Scroll
+
+// Additional
+@import "mixins/iconnav.scss";
+@import "mixins/notification.scss";
+@import "mixins/tooltip.scss";
+@import "mixins/placeholder.scss";
+@import "mixins/progress.scss";
+@import "mixins/sortable.scss";
+@import "mixins/countdown.scss";
+
+// Utilities
+@import "mixins/animation.scss";
+@import "mixins/width.scss";
+@import "mixins/text.scss";
+@import "mixins/column.scss";
+@import "mixins/cover.scss";
+@import "mixins/background.scss";
+@import "mixins/align.scss";
+@import "mixins/utility.scss";
+@import "mixins/flex.scss"; // After: Utility
+@import "mixins/margin.scss";
+@import "mixins/padding.scss";
+@import "mixins/position.scss";
+@import "mixins/transition.scss";
+@import "mixins/visibility.scss";
+@import "mixins/inverse.scss";
+
+// Need to be loaded last
+@import "mixins/print.scss";

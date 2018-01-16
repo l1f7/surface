@@ -1,0 +1,33 @@
+// Name:            Pagination
+// Description:     Component to create a page navigation
+//
+// Component:       `uk-pagination`
+//
+// Adopted:         `uk-pagination-next`
+//                  `uk-pagination-previous`
+//
+// States:          `uk-active`
+//                  `uk-disabled`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+$pagination-margin-horizontal:                   20px !default;
+
+$pagination-item-color:                          $global-muted-color !default;
+$pagination-item-hover-color:                    $global-color !default;
+$pagination-item-hover-text-decoration:          none !default;
+$pagination-item-active-color:                   $global-color !default;
+$pagination-item-disabled-color:                 $global-muted-color !default;
+
+
+// Inverse
+// ========================================================================
+
+$inverse-pagination-item-color:                 $inverse-global-muted-color !default;
+$inverse-pagination-item-hover-color:           $inverse-global-color !default;
+$inverse-pagination-item-active-color:          $inverse-global-color !default;
+$inverse-pagination-item-disabled-color:        $inverse-global-muted-color !default;

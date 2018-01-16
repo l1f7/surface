@@ -1,0 +1,61 @@
+.lf-images--002 {
+  .lf-images-container {
+    min-height: 70vh;
+  }
+
+  .lf-images-image {
+    img {
+      width: auto;
+      max-width: none;
+    }
+  }
+
+  @media (max-width: $breakpoint-small-max) {
+    .lf-images-container {
+      min-height: auto;
+    }
+
+    .lf-images-image {
+      position: static !important; // Needed to override UiKit
+
+      img {
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+.lf-images--009 {
+  .lf-images-container {
+    min-height: 70vh;
+  }
+
+  @media (max-width: $breakpoint-small-max) {
+    // .lf-images-container {
+    //   min-height: auto;
+    // }
+
+    // .lf-images-image {
+    //   position: static !important; // Needed to override UiKit
+
+    //   img {
+    //     max-width: 100%;
+    //   }
+    // }
+  }
+}
+
+@media (max-width: $breakpoint-small-max) {
+  .lf-images--003,
+  .lf-images--004,
+  .lf-images--005 {
+    .lf-images-background {
+      margin-top: 30px;
+      position: relative;
+    }
+
+    .lf-images-image {
+      height: 150px;
+    }
+  }
+}

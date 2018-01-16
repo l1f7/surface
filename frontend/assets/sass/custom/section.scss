@@ -1,0 +1,45 @@
+.lf-section-background {
+  user-select: none;
+}
+
+.lf-section-overlay {
+  opacity: 0.8;
+}
+
+.lf-section-overlay--black {
+  background: color(black);
+}
+
+.lf-section-overlay--white {
+  background: color(white);
+}
+
+.lf-section-videoBackground.flowplayer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 0;
+
+  .fp-ui {
+    display: none;
+  }
+  
+  .fp-player {
+    border-radius: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  .fp-mask {
+    display: none;
+  }
+
+  .fp-engine {
+    border-radius: 0;
+    object-fit: cover;
+  }
+}

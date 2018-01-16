@@ -1,0 +1,43 @@
+// Name:            Off-canvas
+// Description:     Component to create an off-canvas sidebar
+//
+// Component:       `uk-offcanvas`
+//
+// Sub-objects:     `uk-offcanvas-bar`
+//                  `uk-offcanvas-container`
+//                  `uk-offcanvas-content`
+//                  `uk-offcanvas-page`
+//
+// Adopted:         `uk-offcanvas-close`
+//
+// Modifiers:       `uk-offcanvas-flip`
+//                  `uk-offcanvas-bar-animation`
+//                  `uk-offcanvas-reveal`
+//                  `uk-offcanvas-overlay`
+//                  `uk-offcanvas-content-animation`
+//
+// States:          `uk-open`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+$offcanvas-z-index:                              $global-z-index !default;
+
+$offcanvas-bar-width:                            270px !default;
+$offcanvas-bar-padding-vertical:                 $global-margin !default;
+$offcanvas-bar-padding-horizontal:               $global-margin !default;
+$offcanvas-bar-background:                       $global-secondary-background !default;
+$offcanvas-bar-color-mode:                       light !default;
+
+$offcanvas-bar-width-m:                          350px !default;
+$offcanvas-bar-padding-vertical-m:               $global-medium-gutter !default;
+$offcanvas-bar-padding-horizontal-m:             $global-medium-gutter !default;
+
+$offcanvas-close-position:                       20px !default;
+$offcanvas-close-padding:                        5px !default;
+
+$offcanvas-overlay-background:                   rgba(0,0,0,0.1) !default;
+

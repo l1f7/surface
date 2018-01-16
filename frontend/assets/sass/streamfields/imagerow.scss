@@ -1,0 +1,40 @@
+.lf-imagerow-row {
+  display: flex;
+  justify-content: space-between;
+
+  @media (max-width: $breakpoint-small-max) {
+    flex-direction: column;
+  }
+}
+
+.lf-imagerow-image {
+  flex: auto;
+
+  img {
+    display: block;
+    max-width: none;
+    width: 100%;
+  }
+}
+
+.lf-imagerow--large {
+  overflow: hidden;
+
+  .lf-imagerow-row {
+    margin: 0 -20px;
+  }
+
+  .lf-imagerow-image {
+    border: 20px solid transparent;
+  }
+
+  @media (max-width: $breakpoint-medium-max) {
+    .lf-imagerow-row {
+      margin: 0 -5px;
+    }
+
+    .lf-imagerow-image {
+      border: 5px solid transparent;
+    }
+  }
+}

@@ -1,0 +1,36 @@
+// Name:            Label
+// Description:     Component to indicate important notes
+//
+// Component:       `uk-label`
+//
+// Modifiers:       `uk-label-success`
+//                  `uk-label-warning`
+//                  `uk-label-danger`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+$label-padding-vertical:                         0 !default;
+$label-padding-horizontal:                       $global-small-margin !default;
+$label-background:                               $global-primary-background !default;
+$label-line-height:                              $global-line-height !default;
+$label-font-size:                                $global-small-font-size !default;
+$label-color:                                    $global-inverse-color !default;
+
+$label-success-background:                       $global-success-background !default;
+$label-success-color:                            $global-inverse-color !default;
+$label-warning-background:                       $global-warning-background !default;
+$label-warning-color:                            $global-inverse-color !default;
+$label-danger-background:                        $global-danger-background !default;
+$label-danger-color:                             $global-inverse-color !default;
+
+
+// Inverse
+// ========================================================================
+
+$inverse-label-background:                      $inverse-global-primary-background !default;
+$inverse-label-color:                           $inverse-global-inverse-color !default;
+

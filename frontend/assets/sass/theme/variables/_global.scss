@@ -1,13 +1,9 @@
 //
-// Component:       Global Variables
+// Component:       Variables
 // Description:     Defines common values which are used across all components
 //
 // ========================================================================
 
-// Note: We're trying to figure out a better system to handle all the
-// global uikit variables but for now, try to include only those that you need.
-// If you do change one, make it a habit of removing the `!default` flag so we
-// know for sure that it's been modified.
 
 // Breakpoints
 // ========================================================================
@@ -36,9 +32,9 @@ $breakpoint-large-max:                          ($breakpoint-xlarge - 1) !defaul
 // Typography
 //
 
-$global-font-family:                             -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
-$global-font-size:                               16px !default;
-$global-line-height:                             1.5 !default;      // 24px
+$global-font-family:                             $lf--global-font-family;
+$global-font-size:                               16px !default;     // Use lift type settings
+$global-line-height:                             1.5 !default;      // Use lift type settings
 
 $global-xxlarge-font-size:                       2.625rem !default; // 42px
 $global-xlarge-font-size:                        2rem !default;     // 32px
@@ -50,28 +46,29 @@ $global-small-font-size:                         0.875rem !default; // 14px
 // Colors
 //
 
-$global-color:                                   #666 !default;
-$global-emphasis-color:                          #333 !default;
-$global-muted-color:                             #999 !default;
+$global-color:                                   $lf--global-color;
+$global-emphasis-color:                          $lf--global-emphasis-color;
+$global-muted-color:                             $lf--global-muted-color;
 
-$global-link-color:                              #1e87f0 !default;
-$global-link-hover-color:                        #0f6ecd !default;
+$global-link-color:                              $lf--global-link-color;
+$global-link-hover-color:                        $lf--global-link-hover-color;
 
-$global-inverse-color:                           #fff !default;
+$global-inverse-color:                           $lf--global-inverse-color;
+
 
 //
 // Backgrounds
 //
 
-$global-background:                              #fff !default;
+$global-background:                              color(white);
 
-$global-muted-background:                        #f8f8f8 !default;
-$global-primary-background:                      #1e87f0 !default;
-$global-secondary-background:                    #222 !default;
+$global-muted-background:                        color(sky, light);
+$global-primary-background:                      color(blue);
+$global-secondary-background:                    color(ink);
 
-$global-success-background:                      #32d296 !default;
-$global-warning-background:                      #faa05a !default;
-$global-danger-background:                       #f0506e !default;
+$global-success-background:                      color(green);
+$global-warning-background:                      color(yellow);
+$global-danger-background:                       color(red);
 
 //
 // Borders
@@ -119,4 +116,3 @@ $global-control-large-height:                    55px !default;
 //
 
 $global-z-index:                                 1000 !default;
-

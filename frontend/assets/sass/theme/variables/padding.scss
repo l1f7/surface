@@ -1,0 +1,20 @@
+// Name:            Padding
+// Description:     Utilities for padding
+//
+// Component:       `uk-padding`
+//                  `uk-padding-large`
+//                  `uk-padding-remove-*`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+$padding-padding:                                        $global-gutter !default;
+$padding-padding-l:                                      $global-medium-gutter !default;
+
+$padding-small-padding:                                  $global-small-gutter !default;
+
+$padding-large-padding:                                  $global-gutter !default;
+$padding-large-padding-l:                                $global-large-gutter !default;

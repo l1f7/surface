@@ -1,0 +1,27 @@
+// Name:            Column
+// Description:     Utilities for text columns
+//
+// Component:       `uk-column-*`
+//
+// Sub-objects:     `uk-column-span`
+//
+// Modifiers:       `uk-column-divider`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+$column-gutter:                                  $global-gutter !default;
+$column-gutter-l:                                $global-medium-gutter !default;
+
+$column-divider-rule-color:                      $global-border !default;
+$column-divider-rule-width:                      1px !default;
+
+
+// Inverse
+// ========================================================================
+
+$inverse-column-divider-rule-color:                     $inverse-global-border !default;
+

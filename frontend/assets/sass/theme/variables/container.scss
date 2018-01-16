@@ -1,0 +1,23 @@
+// Name:            Container
+// Description:     Component to align and center your site and grid content
+//
+// Component:       `uk-container`
+//
+// Modifier:        `uk-container-small`
+//                  `uk-container-large`
+//                  `uk-container-expand`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+$container-max-width:                    1200px !default;
+$container-small-max-width:              900px !default;
+$container-large-max-width:              1600px !default;
+
+$container-padding-horizontal:           15px !default;
+$container-padding-horizontal-s:         $global-gutter !default;
+$container-padding-horizontal-m:         $global-medium-gutter !default;
+

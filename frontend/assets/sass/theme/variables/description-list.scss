@@ -1,0 +1,19 @@
+// Name:            Description list
+// Description:     Styles for description lists
+//
+// Component:       `uk-description-list`
+//
+// Modifiers:       `uk-description-list-divider`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+$description-list-term-color:                    $global-emphasis-color !default;
+$description-list-term-margin-top:               $global-margin !default;
+
+$description-list-divider-term-margin-top:       $global-margin !default;
+$description-list-divider-term-border-width:     $global-border-width !default;
+$description-list-divider-term-border:           $global-border !default;

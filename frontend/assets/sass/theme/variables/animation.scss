@@ -1,0 +1,34 @@
+// Name:            Animation
+// Description:     Utilities for keyframe animations
+//
+// Component:       `uk-animation-*`
+//
+// Modifiers:       `uk-animation-reverse`
+//                  `uk-animation-fast`
+//                  `uk-animation-fade`
+//                  `uk-animation-scale-up`
+//                  `uk-animation-scale-down`
+//                  `uk-animation-slide-top-*`
+//                  `uk-animation-slide-bottom-*`
+//                  `uk-animation-slide-left-*`
+//                  `uk-animation-slide-right-*`
+//                  `uk-animation-kenburns`
+//                  `uk-animation-shake`
+//
+// Sub-objects:     `uk-animation-toggle`
+//
+// States:          `uk-hover`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+$animation-duration:                             0.5s !default;
+$animation-fade-duration:                        0.8s !default;
+$animation-kenburns-duration:                    15s !default;
+$animation-fast-duration:                        0.1s !default;
+
+$animation-slide-small-translate:                10px !default;
+$animation-slide-medium-translate:               50px !default;

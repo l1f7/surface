@@ -1,0 +1,28 @@
+// Name:            Article
+// Description:     Component to create articles
+//
+// Component:       `uk-article`
+//
+// Sub-objects:     `uk-article-title`
+//                  `uk-article-meta`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+$article-margin-top:                             $global-large-margin !default;
+
+$article-title-font-size:                        $global-xxlarge-font-size !default;
+$article-title-line-height:                      1.2 !default;
+
+$article-meta-font-size:                         $global-small-font-size !default;
+$article-meta-line-height:                       1.4 !default;
+$article-meta-color:                             $global-muted-color !default;
+
+
+// Inverse
+// ========================================================================
+
+$inverse-article-meta-color:                    $inverse-global-muted-color !default;
