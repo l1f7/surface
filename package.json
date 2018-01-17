@@ -23,6 +23,7 @@
     "build:proto": "cross-env NODE_ENV=prototype gulp build",
     "build:prod": "cross-env NODE_ENV=production gulp build",
     "build:root": "cp -R \"frontend/assets/root\" \"website/{{ cookiecutter.short_name }}/static/\"",
+    "build:icons": "mkdir -p node_modules/uikit/custom/lift/icons/; cp frontend/assets/icons/*.svg node_modules/uikit/custom/lift/icons/; cd node_modules/uikit/; npm install; npm run icons; cp dist/js/uikit-icons-lift.js ../../frontend/assets/js/vendor/",
     "watch": "gulp watch"
   },
   "dependencies": {
